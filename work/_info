@@ -10,23 +10,23 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Ealu
-Z0 w1702701170
+Z0 w1702703244
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 7
+!i122 9
 Z4 dC:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06
 Z5 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
 Z6 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
 l0
 L5 1
-VL]C?KXiD`^XClHbM[aGdR0
-!s100 2H]ohmGk3;@MZRLQ2F3d23
+VzS?P57D`6]IFMgZ7z30Kj0
+!s100 PWMlK8aKIN>G3?5fi_]=e1
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1702701174
+Z8 !s110 1702703247
 !i10b 1
-Z9 !s108 1702701174.000000
+Z9 !s108 1702703247.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
 Z11 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
 !i113 1
@@ -36,12 +36,12 @@ Artl
 R1
 R2
 R3
-Z14 DEx4 work 3 alu 0 22 L]C?KXiD`^XClHbM[aGdR0
-!i122 7
-l41
-L38 74
-V_IJQiz@Z:G;Eb:I>4a5A21
-!s100 JWDHiMWmcnlhh>e8Z62GU2
+DEx4 work 3 alu 0 22 zS?P57D`6]IFMgZ7z30Kj0
+!i122 9
+l42
+L39 80
+VIB>6?DRohEKgm@RglDFI73
+!s100 lBibRgf:j?1iBdWmGVYKo3
 R7
 32
 R8
