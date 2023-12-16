@@ -1,4 +1,5 @@
 library IEEE;
+<<<<<<< HEAD
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity MatrixProcessor is
@@ -6,10 +7,19 @@ entity MatrixProcessor is
         CPU_CLK : in std_logic; 
         ENABLE : in std_logic; 
         INSTRUCTION_IN : in std_logic_vector(17 downto 0)
+=======
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity MatrixProcessor is
+    port (
+        
+>>>>>>> fce736ebebb9046ea53d987ddf953287e6b6855c
     );
 end entity MatrixProcessor;
 
 architecture rtl of MatrixProcessor is
+<<<<<<< HEAD
     -- Components definition here 
     COMPONENT DECODER
         port (
@@ -162,3 +172,11 @@ begin
 end process;
 
 end architecture rtl;
+=======
+    
+begin
+    
+    
+    
+end architecture rtl;
+>>>>>>> fce736ebebb9046ea53d987ddf953287e6b6855c
