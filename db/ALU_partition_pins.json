@@ -1,0 +1,501 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DETER_MAT_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DETER_MAT_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_A[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_21_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_12_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_22_B[7]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[5]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[6]",
+					"strict" : false
+				},
+				{
+					"name" : "OPERAND_11_B[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
