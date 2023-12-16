@@ -1,0 +1,153 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "OPCODE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OPCODE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OP1_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OP1_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP1_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OP1_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OP1_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OP2_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OP2_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP2_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OP2_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OP2_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "OP3_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OP3_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OP3_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OP3_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "OP3_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[15]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[16]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[17]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[10]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[11]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[12]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[13]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[14]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[5]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[6]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[7]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[8]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[9]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[0]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[1]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[2]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[3]",
+					"strict" : false
+				},
+				{
+					"name" : "INSTRUCTION[4]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,5 +1,4 @@
 library IEEE;
-<<<<<<< HEAD
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity MatrixProcessor is
@@ -7,19 +6,10 @@ entity MatrixProcessor is
         CPU_CLK : in std_logic; 
         ENABLE : in std_logic; 
         INSTRUCTION_IN : in std_logic_vector(17 downto 0)
-=======
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-
-entity MatrixProcessor is
-    port (
-        
->>>>>>> fce736ebebb9046ea53d987ddf953287e6b6855c
     );
 end entity MatrixProcessor;
 
 architecture rtl of MatrixProcessor is
-<<<<<<< HEAD
     -- Components definition here 
     COMPONENT DECODER
         port (
@@ -68,12 +58,10 @@ architecture rtl of MatrixProcessor is
     -- Initialize Program counter
     signal program_counter : integer := 0;
 
-    -- Initialize other signals as needed
-
 begin
     -- Port Map components here
     ALU1 : ALU port map (
-        PRG_CNT => 0,
+        PRG_CNT => PRG_CNT_ALU,
         OPCODE => OPCODE,
         OPERAND_11_A => RAM_MATRIX_OUT_11_A,
         OPERAND_12_A => RAM_MATRIX_OUT_12_A,
@@ -90,7 +78,7 @@ begin
     );
 
     DECODER1 : DECODER port map (
-        PRG_CNT => 0,
+        PRG_CNT => PRG_CNT_DECODER,
         INSTRUCTION => INSTRUCTION_IN,
         OPCODE => OPCODE,
         OP1_ADDR => OP1_ADDR,
@@ -99,7 +87,7 @@ begin
     );
 
     RAM1 : RAM port map (
-        PRG_CNT => 0,
+        PRG_CNT => PRG_CNT_RAM,
         RAM_ADDR_A => OP1_ADDR,
         RAM_ADDR_B => OP2_ADDR,
         RAM_MATRIX_IN_11 => OPERAND_11_D,
@@ -116,7 +104,6 @@ begin
         RAM_MATRIX_OUT_21_B => RAM_MATRIX_OUT_21_B,
         RAM_MATRIX_OUT_22_B => RAM_MATRIX_OUT_22_B
     );
-
 
 -- CPU Process here, use the CPU clock as the sensitivity list and have the process run on rising edge triggered
 CPU_Process : process (CPU_CLK)
@@ -135,32 +122,48 @@ begin
             when FETCH =>
                 -- When fetch, receive instruction input
                 -- Implement the logic to fetch the instruction and update program_counter
-                -- Assuming INSTRUCTION_IN is a 19-bit instruction
+                INSTRUCTION <= INSTRUCTION_IN;
                 program_counter <= program_counter + 1;
                 next_state <= DECODE;
 
             when DECODE =>
                 -- When decode, pass arguments to decoder component
                 -- Implement the logic to pass arguments to the DECODER component
-                PRG_CNT_DECODER <= program_counter;
+
+                PRG_CNT_DECODER <= program_counter + 1;
                 next_state <= READ_MEM;
 
             when READ_MEM =>
                 -- When read memory, read from RAM and store as operands
                 -- Implement the logic to read from RAM and update the operands
-                PRG_CNT_RAM <= program_counter;
+                RAM_WR <= '0';
+                RAM_ADDR_A <= OP2_ADDR;
+                RAM_ADDR_B <= OP3_ADDR;
+                
+                PRG_CNT_RAM <= PRG_CNT_DECODER + 1;
                 next_state <= EXECUTE;
 
             when EXECUTE =>
                 -- When execute, pass arguments to ALU component, then write back to RAM
                 -- Implement the logic to pass arguments to the ALU component and write back to RAM
-                PRG_CNT_ALU <= program_counter;
+                OPCODE <= OPCODE;
+                OPERAND_11_A <= RAM_MATRIX_OUT_11_A;
+                OPERAND_12_A <= RAM_MATRIX_OUT_12_A;
+                OPERAND_21_A <= RAM_MATRIX_OUT_21_A;
+                OPERAND_22_A <= RAM_MATRIX_OUT_22_A;
+                OPERAND_11_B <= RAM_MATRIX_OUT_11_B;
+                OPERAND_12_B <= RAM_MATRIX_OUT_12_B;
+                OPERAND_21_B <= RAM_MATRIX_OUT_21_B;
+                OPERAND_22_B <= RAM_MATRIX_OUT_22_B;
+                RAM_WR <= '1';
+                PRG_CNT_ALU <= PRG_CNT_RAM + 1;
                 next_state <= COMPLETE;
 
             when COMPLETE =>
                 -- When complete, print report statement to notify instruction complete
                 -- Implement the logic to print a report statement or perform other actions
                 report "Instruction complete at Program Counter " & integer'image(program_counter);
+                program_counter <= PRG_CNT_ALU + 1;
                 next_state <= IDLE;
 
             when others =>
@@ -172,11 +175,3 @@ begin
 end process;
 
 end architecture rtl;
-=======
-    
-begin
-    
-    
-    
-end architecture rtl;
->>>>>>> fce736ebebb9046ea53d987ddf953287e6b6855c
