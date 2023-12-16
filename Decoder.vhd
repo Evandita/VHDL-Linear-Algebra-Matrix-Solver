@@ -6,7 +6,7 @@ ENTITY DECODER IS
         PRG_CNT : IN INTEGER; -- Program counter
         INSTRUCTION : IN STD_LOGIC_VECTOR(17 DOWNTO 0); -- Instruksi yang akan di-decode
         OPCODE : OUT STD_LOGIC_VECTOR(2 DOWNTO 0); -- Bentuk operasi yang akan dilakukan pada matriks
-        OP1_ADDR, OP2_ADDR, OP3_ADDR : IN STD_LOGIC_VECTOR(4 DOWNTO 0) -- Alamat dari operand pertama sampai ketiga
+        OP1_ADDR, OP2_ADDR, OP3_ADDR : OUT STD_LOGIC_VECTOR(4 DOWNTO 0) -- Alamat dari operand pertama sampai ketiga
     );
 END ENTITY DECODER;
 

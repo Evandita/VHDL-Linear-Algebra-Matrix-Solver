@@ -30,7 +30,7 @@ entity RAM is
         RAM_MATRIX_OUT_11_B : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_12_B : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_21_B : out std_logic_vector(7 downto 0);
-        RAM_MATRIX_OUT_22_B : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_22_B : out std_logic_vector(7 downto 0)
     );
 end entity RAM;
 
@@ -50,23 +50,25 @@ begin
     begin
         -- Ketika sinyal enable bernilai '1', maka memasukkan nilai matriks 2x2 pada register memori yang dituju
         if RAM_WR = '1' then
-            registers_11(to_integer(unsigned(RAM_ADDR_1))) <= RAM_DATA_IN_11;
-            registers_12(to_integer(unsigned(RAM_ADDR_1))) <= RAM_DATA_IN_12;
-            registers_21(to_integer(unsigned(RAM_ADDR_1))) <= RAM_DATA_IN_21;
-            registers_22(to_integer(unsigned(RAM_ADDR_1))) <= RAM_DATA_IN_22;
+            registers_11(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_11;
+            registers_12(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_12;
+            registers_21(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_21;
+            registers_22(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_22;
         -- Ketika sinyal enable bernilai '0', maka mengeluarkan 2 buah nilai matriks 2x2 dari register memori yang dipilih
         else 
-            RAM_DATA_OUT_11_A <= registers_11(to_integer(unsigned(RAM_ADDR_1)));
-            RAM_DATA_OUT_12_A <= registers_12(to_integer(unsigned(RAM_ADDR_1)));
-            RAM_DATA_OUT_21_A <= registers_21(to_integer(unsigned(RAM_ADDR_1)));
-            RAM_DATA_OUT_22_A <= registers_22(to_integer(unsigned(RAM_ADDR_1)));
+            RAM_MATRIX_OUT_11_A <= registers_11(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_12_A <= registers_12(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_21_A <= registers_21(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_22_A <= registers_22(to_integer(unsigned(RAM_ADDR_A)));
 
-            RAM_DATA_OUT_11_B <= registers_11(to_integer(unsigned(RAM_ADDR_1)));
-            RAM_DATA_OUT_12_B <= registers_12(to_integer(unsigned(RAM_ADDR_1)));
-            RAM_DATA_OUT_21_B <= registers_21(to_integer(unsigned(RAM_ADDR_1)));
-            RAM_DATA_OUT_22_B <= registers_22(to_integer(unsigned(RAM_ADDR_1)));
+            RAM_MATRIX_OUT_11_B <= registers_11(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_12_B <= registers_12(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_21_B <= registers_21(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_22_B <= registers_22(to_integer(unsigned(RAM_ADDR_B)));
         end if;
 
     end process;
 end architecture rtl;
+
+
 

@@ -10,11 +10,11 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Ealu
-Z0 w1702703244
+Z0 w1702703744
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 9
+!i122 11
 Z4 dC:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06
 Z5 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
 Z6 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
@@ -24,9 +24,9 @@ VzS?P57D`6]IFMgZ7z30Kj0
 !s100 PWMlK8aKIN>G3?5fi_]=e1
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1702703247
+Z8 !s110 1702704174
 !i10b 1
-Z9 !s108 1702703247.000000
+Z9 !s108 1702704174.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
 Z11 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
 !i113 1
@@ -37,7 +37,7 @@ R1
 R2
 R3
 DEx4 work 3 alu 0 22 zS?P57D`6]IFMgZ7z30Kj0
-!i122 9
+!i122 11
 l42
 L39 80
 VIB>6?DRohEKgm@RglDFI73
@@ -53,24 +53,86 @@ R11
 R12
 R13
 Edecoder
-w1702698633
+Z14 w1702704171
 R2
 R3
-!i122 1
+!i122 12
 R4
-8C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd
-FC:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd
+Z15 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd
+Z16 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd
 l0
 L4 1
-VnMmj8;4An^SMh:`Y`;_zz1
-!s100 kjM1YfkE_?65o`TX6D9fB0
+VN6T0NYLKK:C:Z9UgP72^R3
+!s100 :C9n[0Bf[QT5`9nTK`XJ>3
 R7
 32
-!s110 1702699748
+Z17 !s110 1702704179
 !i10b 1
-!s108 1702699748.000000
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd|
-!s107 C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd|
+Z18 !s108 1702704179.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd|
+Z20 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+DEx4 work 7 decoder 0 22 N6T0NYLKK:C:Z9UgP72^R3
+!i122 12
+l14
+L13 10
+Vne9HQffAQhoH0a4IV;aeN0
+!s100 _a><YiGQ@3mQ;Y[jZR>`S3
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Eram
+Z21 w1702704476
+R1
+R2
+R3
+!i122 15
+R4
+Z22 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd
+Z23 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd
+l0
+L6 1
+VGNfeoVRj_MAzDo<g82SZm3
+!s100 aGWM;QN:_:1ATF@?eMdV02
+R7
+32
+Z24 !s110 1702704479
+!i10b 1
+Z25 !s108 1702704479.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd|
+!s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd|
+!i113 1
+R12
+R13
+Artl
+R1
+R2
+R3
+DEx4 work 3 ram 0 22 GNfeoVRj_MAzDo<g82SZm3
+!i122 15
+l48
+L37 35
+VKWYH7lUkTVLHUFihTk7?b3
+!s100 QRDUV[42WaEN>BXV2P<Ef0
+R7
+32
+R24
+!i10b 1
+R25
+R26
+Z27 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd|
 !i113 1
 R12
 R13
