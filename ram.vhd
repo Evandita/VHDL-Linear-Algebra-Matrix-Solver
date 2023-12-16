@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.ALL;
 
 -- A 32x2x2x8 RAM in VHDL
-entity ram is
+entity RAM is
     port(
         PRG_CNT : in integer; -- Program counter
 
@@ -32,9 +32,9 @@ entity ram is
         RAM_MATRIX_OUT_21_B : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_22_B : out std_logic_vector(7 downto 0);
     );
-end entity ram;
+end entity RAM;
 
-architecture rtl of ram is
+architecture rtl of RAM is
 
     type RegisterArray is array (31 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
     

@@ -1,16 +1,16 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 
-ENTITY Decoder IS
+ENTITY DECODER IS
     PORT (
         PRG_CNT : IN INTEGER; -- Program counter
         INSTRUCTION : IN STD_LOGIC_VECTOR(17 DOWNTO 0); -- Instruksi yang akan di-decode
         OPCODE : OUT STD_LOGIC_VECTOR(2 DOWNTO 0); -- Bentuk operasi yang akan dilakukan pada matriks
         OP1_ADDR, OP2_ADDR, OP3_ADDR : IN STD_LOGIC_VECTOR(4 DOWNTO 0) -- Alamat dari operand pertama sampai ketiga
     );
-END ENTITY Decoder;
+END ENTITY DECODER;
 
-ARCHITECTURE rtl OF Decoder IS
+ARCHITECTURE rtl OF DECODER IS
 BEGIN
     DEC_PROC : PROCESS (PRG_CNT)
     BEGIN

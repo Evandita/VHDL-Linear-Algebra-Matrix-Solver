@@ -33,15 +33,28 @@ ENTITY ALU IS
         OPERAND_22_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0)
     );
 END ENTITY ALU;
+    
 
 ARCHITECTURE rtl OF ALU IS
+    signal Temp_result_det_A, Temp_result_det_B : signed(15 downto 0) := (others => '0');
+    signal Result_det_A, Result_det_B : signed(7 downto 0) := (others => '0');
 BEGIN
+    
     -- Determinan matriks A dan B
-    DETER_MAT_A <= STD_LOGIC_VECTOR((SIGNED(OPERAND_11_A(3 downto 0)) * SIGNED(OPERAND_22_A(3 downto 0))) - (SIGNED(OPERAND_12_A(3 downto 0)) * SIGNED(OPERAND_21_A(3 downto 0))));
-    DETER_MAT_B <= STD_LOGIC_VECTOR((SIGNED(OPERAND_11_B(3 downto 0)) * SIGNED(OPERAND_22_B(3 downto 0))) - (SIGNED(OPERAND_12_B(3 downto 0)) * SIGNED(OPERAND_21_B(3 downto 0))));
+    
+    Temp_result_det_A <= SIGNED(OPERAND_11_A) * SIGNED(OPERAND_22_A) - SIGNED(OPERAND_12_A) * SIGNED(OPERAND_21_A);
+    Temp_result_det_B <= SIGNED(OPERAND_11_B) * SIGNED(OPERAND_22_B) - SIGNED(OPERAND_12_B) * SIGNED(OPERAND_21_B);
+
+    Result_det_A <= resize(Temp_result_det_A, Result_det_A'length);
+    Result_det_B <= resize(Temp_result_det_A, Result_det_B'length);
+
+    DETER_MAT_A <= STD_LOGIC_VECTOR(Result_det_A);
+    DETER_MAT_B <= STD_LOGIC_VECTOR(Result_det_B);
 
     ALU_PROC : PROCESS (PRG_CNT)
     BEGIN
+        
+        
         CASE OPCODE IS
             -- Penjumlahan matriks
             WHEN "000" =>
@@ -96,3 +109,5 @@ BEGIN
         END CASE;
     END PROCESS;
 END ARCHITECTURE rtl;
+
+

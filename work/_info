@@ -1,0 +1,76 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Ealu
+Z0 w1702701170
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 7
+Z4 dC:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06
+Z5 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
+Z6 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
+l0
+L5 1
+VL]C?KXiD`^XClHbM[aGdR0
+!s100 2H]ohmGk3;@MZRLQ2F3d23
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1702701174
+!i10b 1
+Z9 !s108 1702701174.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
+Z11 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R1
+R2
+R3
+Z14 DEx4 work 3 alu 0 22 L]C?KXiD`^XClHbM[aGdR0
+!i122 7
+l41
+L38 74
+V_IJQiz@Z:G;Eb:I>4a5A21
+!s100 JWDHiMWmcnlhh>e8Z62GU2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edecoder
+w1702698633
+R2
+R3
+!i122 1
+R4
+8C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd
+FC:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd
+l0
+L4 1
+VnMmj8;4An^SMh:`Y`;_zz1
+!s100 kjM1YfkE_?65o`TX6D9fB0
+R7
+32
+!s110 1702699748
+!i10b 1
+!s108 1702699748.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd|
+!s107 C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd|
+!i113 1
+R12
+R13
