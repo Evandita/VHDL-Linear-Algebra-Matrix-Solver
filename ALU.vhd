@@ -23,7 +23,7 @@ ENTITY ALU IS
 
         -- Operand A untuk melakukan operasi matriks 
         OPERAND_11_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        OPERAND_11_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_12_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
         OPERAND_21_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
         OPERAND_22_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 
@@ -116,3 +116,5 @@ BEGIN
         END CASE;
     END PROCESS;
 END ARCHITECTURE rtl;
+
+

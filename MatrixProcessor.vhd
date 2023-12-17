@@ -1,177 +1,156 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity MatrixProcessor is
-    port (
-        CPU_CLK : in std_logic; 
-        ENABLE : in std_logic; 
-        INSTRUCTION_IN : in std_logic_vector(17 downto 0)
+ENTITY MatrixProcessor IS
+    PORT (
+        CPU_CLK : IN STD_LOGIC;
+        ENABLE : IN STD_LOGIC;
+        INSTRUCTION_IN : IN STD_LOGIC_VECTOR(17 DOWNTO 0)
     );
-end entity MatrixProcessor;
+END ENTITY MatrixProcessor;
 
-architecture rtl of MatrixProcessor is
-    -- Components definition here 
+ARCHITECTURE rtl OF MatrixProcessor IS
+    -- Components definition 
     COMPONENT DECODER
-        port (
-            PRG_CNT : in integer;
-            INSTRUCTION : in std_logic_vector(17 downto 0);
-            OPCODE : out std_logic_vector(2 downto 0);
-            OP1_ADDR, OP2_ADDR, OP3_ADDR : out std_logic_vector(4 downto 0)
+        PORT (
+            PRG_CNT : IN INTEGER;
+            INSTRUCTION : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+            OPCODE : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+            OP1_ADDR, OP2_ADDR, OP3_ADDR : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
         );
-    end component;
+    END COMPONENT;
 
     COMPONENT ALU
-        port (
-            PRG_CNT : in integer;
-            OPCODE : in std_logic_vector(2 downto 0);
-            DETER_MAT_A, DETER_MAT_B, DETER_MAT_D : out std_logic_vector(7 downto 0);
-            OPERAND_11_D, OPERAND_12_D, OPERAND_21_D, OPERAND_22_D : out std_logic_vector(7 downto 0);
-            OPERAND_11_A, OPERAND_12_A, OPERAND_21_A, OPERAND_22_A : in std_logic_vector(7 downto 0);
-            OPERAND_11_B, OPERAND_12_B, OPERAND_21_B, OPERAND_22_B : in std_logic_vector(7 downto 0)
+        PORT (
+            PRG_CNT : IN INTEGER;
+            OPCODE : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+            DETER_MAT_A, DETER_MAT_B, DETER_MAT_D : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            OPERAND_11_D, OPERAND_12_D, OPERAND_21_D, OPERAND_22_D : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            OPERAND_11_A, OPERAND_12_A, OPERAND_21_A, OPERAND_22_A : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            OPERAND_11_B, OPERAND_12_B, OPERAND_21_B, OPERAND_22_B : IN STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
-    end component;
+    END COMPONENT;
 
     COMPONENT RAM
-        port (
-            PRG_CNT : in integer;
-            RAM_ADDR_A, RAM_ADDR_B : in std_logic_vector(4 downto 0);
-            RAM_MATRIX_IN_11, RAM_MATRIX_IN_12, RAM_MATRIX_IN_21, RAM_MATRIX_IN_22 : in std_logic_vector(7 downto 0);
-            RAM_WR : in std_logic;
-            RAM_MATRIX_OUT_11_A, RAM_MATRIX_OUT_12_A, RAM_MATRIX_OUT_21_A, RAM_MATRIX_OUT_22_A : out std_logic_vector(7 downto 0);
-            RAM_MATRIX_OUT_11_B, RAM_MATRIX_OUT_12_B, RAM_MATRIX_OUT_21_B, RAM_MATRIX_OUT_22_B : out std_logic_vector(7 downto 0)
+        PORT (
+            PRG_CNT : IN INTEGER;
+            RAM_ADDR_A, RAM_ADDR_B : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+            RAM_MATRIX_IN_11, RAM_MATRIX_IN_12, RAM_MATRIX_IN_21, RAM_MATRIX_IN_22 : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            RAM_WR : IN STD_LOGIC;
+            RAM_MATRIX_OUT_11_A, RAM_MATRIX_OUT_12_A, RAM_MATRIX_OUT_21_A, RAM_MATRIX_OUT_22_A : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+            RAM_MATRIX_OUT_11_B, RAM_MATRIX_OUT_12_B, RAM_MATRIX_OUT_21_B, RAM_MATRIX_OUT_22_B : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
-    end component;
+    END COMPONENT;
 
-    -- Utility signal definitions here
-    signal PRG_CNT_DECODER, PRG_CNT_ALU, PRG_CNT_RAM : integer;
-    -- Deklarasi sinyal utilitas
-    signal OPCODE : std_logic_vector(2 downto 0);
-    signal OP1_ADDR, OP2_ADDR, OP3_ADDR : std_logic_vector(4 downto 0);
-    signal RAM_MATRIX_OUT_11_A, RAM_MATRIX_OUT_12_A, RAM_MATRIX_OUT_21_A, RAM_MATRIX_OUT_22_A : std_logic_vector(7 downto 0);
-    signal RAM_MATRIX_OUT_11_B, RAM_MATRIX_OUT_12_B, RAM_MATRIX_OUT_21_B, RAM_MATRIX_OUT_22_B : std_logic_vector(7 downto 0);
-    signal OPERAND_11_D, OPERAND_12_D, OPERAND_21_D, OPERAND_22_D : std_logic_vector(7 downto 0);
-
-    -- Create state types for FSM here (according to FSM diagram) 
-    type CPU_State is (IDLE, FETCH, DECODE, READ_MEM, EXECUTE, COMPLETE);
-    signal current_state, next_state : CPU_State;
-
+    -- Utility signal definitions
+    SIGNAL RAM_WR_s : STD_LOGIC;
+    SIGNAL OPCODE_s : STD_LOGIC_VECTOR(2 DOWNTO 0);
+    SIGNAL OP1_ADDR_s, OP2_ADDR_s, OP3_ADDR_s : STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL RAM_ADDR_A_s : STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL RAM_ADDR_B_s : STD_LOGIC_VECTOR(4 DOWNTO 0);
+    SIGNAL RAM_MATRIX_OUT_11_A_s, RAM_MATRIX_OUT_12_A_s, RAM_MATRIX_OUT_21_A_s, RAM_MATRIX_OUT_22_A_s : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL RAM_MATRIX_OUT_11_B_s, RAM_MATRIX_OUT_12_B_s, RAM_MATRIX_OUT_21_B_s, RAM_MATRIX_OUT_22_B_s : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL RAM_MATRIX_IN_11_s, RAM_MATRIX_IN_12_s, RAM_MATRIX_IN_21_s, RAM_MATRIX_IN_22_s : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL DETER_MAT_A_s, DETER_MAT_B_s, DETER_MAT_D_s : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    -- Create state types for FSM
+    TYPE CPU_State IS (IDLE, FETCH, DECODE, READ_MEM, EXECUTE, COMPLETE);
+    -- Initialize CPU state
+    SIGNAL current_state, next_state : CPU_State;
     -- Initialize Program counter
-    signal program_counter : integer := 0;
+    SIGNAL Program_Counter : INTEGER := 0;
 
-begin
-    -- Port Map components here
-    ALU1 : ALU port map (
-        PRG_CNT => PRG_CNT_ALU,
-        OPCODE => OPCODE,
-        OPERAND_11_A => RAM_MATRIX_OUT_11_A,
-        OPERAND_12_A => RAM_MATRIX_OUT_12_A,
-        OPERAND_21_A => RAM_MATRIX_OUT_21_A,
-        OPERAND_22_A => RAM_MATRIX_OUT_22_A,
-        OPERAND_11_B => RAM_MATRIX_OUT_11_B,
-        OPERAND_12_B => RAM_MATRIX_OUT_12_B,
-        OPERAND_21_B => RAM_MATRIX_OUT_21_B,
-        OPERAND_22_B => RAM_MATRIX_OUT_22_B,
-        OPERAND_11_D => OPERAND_11_D,
-        OPERAND_12_D => OPERAND_12_D,
-        OPERAND_21_D => OPERAND_21_D,
-        OPERAND_22_D => OPERAND_22_D
+BEGIN
+    -- Port Map components
+    DECODER1 : DECODER PORT MAP(
+        Program_Counter,
+        INSTRUCTION_IN,
+        OPCODE_s,
+        OP1_ADDR_s,
+        OP2_ADDR_s,
+        OP3_ADDR_s
     );
 
-    DECODER1 : DECODER port map (
-        PRG_CNT => PRG_CNT_DECODER,
-        INSTRUCTION => INSTRUCTION_IN,
-        OPCODE => OPCODE,
-        OP1_ADDR => OP1_ADDR,
-        OP2_ADDR => OP2_ADDR,
-        OP3_ADDR => OP3_ADDR
+    RAM1 : RAM PORT MAP(
+        Program_Counter,
+        RAM_ADDR_A_s,
+        OP3_ADDR_s,
+        RAM_MATRIX_IN_11_s,
+        RAM_MATRIX_IN_12_s,
+        RAM_MATRIX_IN_21_s,
+        RAM_MATRIX_IN_22_s,
+        RAM_WR_s,
+        RAM_MATRIX_OUT_11_A_s, RAM_MATRIX_OUT_12_A_s, RAM_MATRIX_OUT_21_A_s, RAM_MATRIX_OUT_22_A_s,
+        RAM_MATRIX_OUT_11_B_s, RAM_MATRIX_OUT_12_B_s, RAM_MATRIX_OUT_21_B_s, RAM_MATRIX_OUT_22_B_s
     );
 
-    RAM1 : RAM port map (
-        PRG_CNT => PRG_CNT_RAM,
-        RAM_ADDR_A => OP1_ADDR,
-        RAM_ADDR_B => OP2_ADDR,
-        RAM_MATRIX_IN_11 => OPERAND_11_D,
-        RAM_MATRIX_IN_12 => OPERAND_12_D,
-        RAM_MATRIX_IN_21 => OPERAND_21_D,
-        RAM_MATRIX_IN_22 => OPERAND_22_D,
-        RAM_WR => '0',
-        RAM_MATRIX_OUT_11_A => RAM_MATRIX_OUT_11_A,
-        RAM_MATRIX_OUT_12_A => RAM_MATRIX_OUT_12_A,
-        RAM_MATRIX_OUT_21_A => RAM_MATRIX_OUT_21_A,
-        RAM_MATRIX_OUT_22_A => RAM_MATRIX_OUT_22_A,
-        RAM_MATRIX_OUT_11_B => RAM_MATRIX_OUT_11_B,
-        RAM_MATRIX_OUT_12_B => RAM_MATRIX_OUT_12_B,
-        RAM_MATRIX_OUT_21_B => RAM_MATRIX_OUT_21_B,
-        RAM_MATRIX_OUT_22_B => RAM_MATRIX_OUT_22_B
+    ALU1 : ALU PORT MAP(
+        Program_Counter,
+        OPCODE_s,
+        DETER_MAT_A_s,
+        DETER_MAT_B_s,
+        DETER_MAT_D_s,
+        RAM_MATRIX_IN_11_s,
+        RAM_MATRIX_IN_12_s,
+        RAM_MATRIX_IN_21_s,
+        RAM_MATRIX_IN_22_s,
+        RAM_MATRIX_OUT_11_A_s, RAM_MATRIX_OUT_12_A_s, RAM_MATRIX_OUT_21_A_s, RAM_MATRIX_OUT_22_A_s,
+        RAM_MATRIX_OUT_11_B_s, RAM_MATRIX_OUT_12_B_s, RAM_MATRIX_OUT_21_B_s, RAM_MATRIX_OUT_22_B_s
     );
 
--- CPU Process here, use the CPU clock as the sensitivity list and have the process run on rising edge triggered
-CPU_Process : process (CPU_CLK)
-begin
-    if rising_edge(CPU_CLK) then
-        -- FSM logic here
-        case current_state is
-            when IDLE =>
+    -- CPU Process, use the CPU clock as the sensitivity list and have the process run on rising edge triggered
+    PROCESS (current_state, ENABLE) IS
+    BEGIN
+        -- FSM logic
+        CASE current_state IS
+            WHEN IDLE =>
                 -- When idle state, wait for enable to be '1'
-                if ENABLE = '1' then
+                IF ENABLE = '1' THEN
                     next_state <= FETCH;
-                else
+                    Program_Counter <= Program_Counter + 1;
+                ELSE
                     next_state <= IDLE;
-                end if;
+                END IF;
 
-            when FETCH =>
+            WHEN FETCH =>
                 -- When fetch, receive instruction input
-                -- Implement the logic to fetch the instruction and update program_counter
-                INSTRUCTION <= INSTRUCTION_IN;
-                program_counter <= program_counter + 1;
+                Program_Counter <= Program_Counter + 1;
                 next_state <= DECODE;
 
-            when DECODE =>
+            WHEN DECODE =>
                 -- When decode, pass arguments to decoder component
-                -- Implement the logic to pass arguments to the DECODER component
-
-                PRG_CNT_DECODER <= program_counter + 1;
+                Program_Counter <= Program_Counter + 1;
                 next_state <= READ_MEM;
-
-            when READ_MEM =>
+            WHEN READ_MEM =>
                 -- When read memory, read from RAM and store as operands
-                -- Implement the logic to read from RAM and update the operands
-                RAM_WR <= '0';
-                RAM_ADDR_A <= OP2_ADDR;
-                RAM_ADDR_B <= OP3_ADDR;
-                
-                PRG_CNT_RAM <= PRG_CNT_DECODER + 1;
+                RAM_ADDR_A_s <= OP2_ADDR_s;
+                RAM_WR_s <= '0';
                 next_state <= EXECUTE;
+                Program_Counter <= Program_Counter + 1;
 
-            when EXECUTE =>
+            WHEN EXECUTE =>
                 -- When execute, pass arguments to ALU component, then write back to RAM
-                -- Implement the logic to pass arguments to the ALU component and write back to RAM
-                OPCODE <= OPCODE;
-                OPERAND_11_A <= RAM_MATRIX_OUT_11_A;
-                OPERAND_12_A <= RAM_MATRIX_OUT_12_A;
-                OPERAND_21_A <= RAM_MATRIX_OUT_21_A;
-                OPERAND_22_A <= RAM_MATRIX_OUT_22_A;
-                OPERAND_11_B <= RAM_MATRIX_OUT_11_B;
-                OPERAND_12_B <= RAM_MATRIX_OUT_12_B;
-                OPERAND_21_B <= RAM_MATRIX_OUT_21_B;
-                OPERAND_22_B <= RAM_MATRIX_OUT_22_B;
-                RAM_WR <= '1';
-                PRG_CNT_ALU <= PRG_CNT_RAM + 1;
+                RAM_WR_s <= '1';
+                RAM_ADDR_A_s <= OP1_ADDR_s;
                 next_state <= COMPLETE;
+                Program_Counter <= Program_Counter + 1;
 
-            when COMPLETE =>
+            WHEN COMPLETE =>
                 -- When complete, print report statement to notify instruction complete
-                -- Implement the logic to print a report statement or perform other actions
-                report "Instruction complete at Program Counter " & integer'image(program_counter);
-                program_counter <= PRG_CNT_ALU + 1;
+                REPORT "Instruction complete at Program Counter " & INTEGER'image(program_counter);
                 next_state <= IDLE;
+                Program_Counter <= 0;
 
-            when others =>
+            WHEN OTHERS =>
                 next_state <= IDLE;
-        end case;
+        END CASE;
 
-        current_state <= next_state;
-    end if;
-end process;
+    END PROCESS;
 
-end architecture rtl;
+    PROCESS (CPU_CLK) IS
+    BEGIN
+        IF rising_edge(CPU_CLK) THEN
+            current_state <= next_state;
+        END IF;
+    END PROCESS;
+
+END ARCHITECTURE rtl;
