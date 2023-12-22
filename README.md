@@ -2,10 +2,12 @@
 Linear Algebra Matrix Solver merupakan simple computer yang dirancang khusus untuk menyelesaikan berbagai permasalahan matriks pada aljabar linear. Rangkaian matriks prosesor ini memiliki ISA yang dapat memberikan solusi atas permasalahan matriks berordo 3x3. ISA tersebut terdiri dari penjumlahan matriks A dan B, pengurangan matriks A dan B, perkalian matriks A dan B, pencerminan matriks A terhadap sumbu x, pencerminan matriks A terhadap sumbu y, pencerminan matriks A terhadap sumbu z, transpose matriks A, dan kofaktor matriks A. Selain itu, terdapat tambahan determinan matriks yang ditempatkan pada bagian dataflow. 
 
 ## Rangkaian 
+![Rangkaian_PSD](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/a986b9fe-59a0-4468-a7be-51d3aa50ce48)
 
 ## Control Word
   17 16 15   14 13 12 11 10   09 08 07 06 05   04 03 02 01 00
 |    FS    |       DA       |       AA       |       BA       |
+|----------|----------------|----------------|----------------|
 
 ## Function Select
 |  Bit  |          Function           |
