@@ -7,14 +7,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity RAM
 -- Compiling architecture rtl of RAM
 
-} {} {}} {C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity DECODER
--- Compiling architecture rtl of DECODER
-
 } {} {}} {C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ALU.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ALU.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -23,5 +15,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package NUMERIC_STD
 -- Compiling entity ALU
 -- Compiling architecture rtl of ALU
+
+} {} {}} {C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity DECODER
+-- Compiling architecture rtl of DECODER
 
 } {} {}}
