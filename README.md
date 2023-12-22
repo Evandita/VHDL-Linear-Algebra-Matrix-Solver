@@ -5,9 +5,7 @@ Linear Algebra Matrix Solver merupakan simple computer yang dirancang khusus unt
 ![Rangkaian_PSD](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/a986b9fe-59a0-4468-a7be-51d3aa50ce48)
 
 ## Control Word
-  17 16 15   14 13 12 11 10   09 08 07 06 05   04 03 02 01 00
-|    FS    |       DA       |       AA       |       BA       |
-|----------|----------------|----------------|----------------|
+![CW_PSD drawio](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/7358946d-c029-4d79-aa01-a5d9cdef3df0)
 
 ## Function Select
 |  Bit  |          Function           |
