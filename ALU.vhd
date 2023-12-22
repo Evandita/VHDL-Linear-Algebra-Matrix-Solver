@@ -46,7 +46,7 @@ ENTITY ALU IS
         OPERAND_23_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_31_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_32_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-        OPERAND_33_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_33_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0)
 
     );
 END ENTITY ALU;
@@ -148,19 +148,18 @@ BEGIN
                 Result_D_33 <= (SIGNED(OPERAND_33_A));
                 -- Kofaktor matriks A
             WHEN "110" =>
-                -- Cofactor Matriks 3x3
 
-                Result_D_11 <= resize((SIGNED(OPERAND_22_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_23_A) * SIGNED(OPERAND_32_A)), Result_C_11'length);
-                Result_D_12 <= resize((SIGNED(OPERAND_21_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_23_A) * SIGNED(OPERAND_31_A)), Result_C_12'length);
-                Result_D_13 <= resize((SIGNED(OPERAND_21_A) * SIGNED(OPERAND_32_A)) - (SIGNED(OPERAND_22_A) * SIGNED(OPERAND_31_A)), Result_C_13'length);
+                Result_D_11 <= resize((SIGNED(OPERAND_22_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_23_A) * SIGNED(OPERAND_32_A)), Result_D_11'length);
+                Result_D_12 <= resize(-1 * ((SIGNED(OPERAND_21_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_23_A) * SIGNED(OPERAND_31_A))), Result_D_12'length);
+                Result_D_13 <= resize((SIGNED(OPERAND_21_A) * SIGNED(OPERAND_32_A)) - (SIGNED(OPERAND_22_A) * SIGNED(OPERAND_31_A)), Result_D_13'length);
 
-                Result_D_21 <= resize((SIGNED(OPERAND_12_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_32_A)), Result_C_21'length);
-                Result_D_22 <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_31_A)), Result_C_22'length);
-                Result_D_23 <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_32_A)) - (SIGNED(OPERAND_12_A) * SIGNED(OPERAND_31_A)), Result_C_23'length);
+                Result_D_21 <= resize(-1 * ((SIGNED(OPERAND_12_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_32_A))), Result_D_21'length);
+                Result_D_22 <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_33_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_31_A)), Result_D_22'length);
+                Result_D_23 <= resize(-1 * ((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_32_A)) - (SIGNED(OPERAND_12_A) * SIGNED(OPERAND_31_A))), Result_D_23'length);
 
-                Result_D_31 <= resize((SIGNED(OPERAND_12_A) * SIGNED(OPERAND_23_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_22_A)), Result_C_31'length);
-                Result_D_32 <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_23_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_21_A)), Result_C_32'length);
-                Result_D_33 <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_22_A)) - (SIGNED(OPERAND_12_A) * SIGNED(OPERAND_21_A)), Result_C_33'length);
+                Result_D_31 <= resize((SIGNED(OPERAND_12_A) * SIGNED(OPERAND_23_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_22_A)), Result_D_31'length);
+                Result_D_32 <= resize(-1 * ((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_23_A)) - (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_21_A))), Result_D_32'length);
+                Result_D_33 <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_22_A)) - (SIGNED(OPERAND_12_A) * SIGNED(OPERAND_21_A)), Result_D_33'length);
 
                 -- Perkalian Matriks
             WHEN "111" =>

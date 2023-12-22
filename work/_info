@@ -10,25 +10,25 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Ealu
-Z0 w1702703744
+Z0 w1703232755
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 11
-Z4 dC:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06
-Z5 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
-Z6 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd
+!i122 22
+Z4 dC:/Users/Monica Vierin Pasman/Documents/Proyek Akhir
+Z5 8C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ALU.vhd
+Z6 FC:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ALU.vhd
 l0
 L5 1
-VzS?P57D`6]IFMgZ7z30Kj0
-!s100 PWMlK8aKIN>G3?5fi_]=e1
+VbLk=_E1AYlaElX<LAkSl]3
+!s100 ?l2hT^7z;o1?_kf^P4Zmo1
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1702704174
+Z8 !s110 1703232918
 !i10b 1
-Z9 !s108 1702704174.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
-Z11 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd|
+Z9 !s108 1703232918.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ALU.vhd|
+Z11 !s107 C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ALU.vhd|
 !i113 1
 Z12 o-work work -2002 -explicit
 Z13 tExplicit 1 CvgOpt 0
@@ -36,12 +36,12 @@ Artl
 R1
 R2
 R3
-DEx4 work 3 alu 0 22 zS?P57D`6]IFMgZ7z30Kj0
-!i122 11
-l42
-L39 80
-VIB>6?DRohEKgm@RglDFI73
-!s100 lBibRgf:j?1iBdWmGVYKo3
+DEx4 work 3 alu 0 22 bLk=_E1AYlaElX<LAkSl]3
+!i122 22
+l57
+L54 126
+VCERFgQ1EH@`924hjSm@161
+!s100 AzcF11ETJXY5ZR5fVD[GZ3
 R7
 32
 R8
@@ -53,24 +53,24 @@ R11
 R12
 R13
 Edecoder
-Z14 w1702704171
+Z14 w1703232751
 R2
 R3
-!i122 12
+!i122 21
 R4
-Z15 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd
-Z16 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd
+Z15 8C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd
+Z16 FC:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd
 l0
 L4 1
 VN6T0NYLKK:C:Z9UgP72^R3
 !s100 :C9n[0Bf[QT5`9nTK`XJ>3
 R7
 32
-Z17 !s110 1702704179
+Z17 !s110 1703232915
 !i10b 1
-Z18 !s108 1702704179.000000
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd|
-Z20 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd|
+Z18 !s108 1703232915.000000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd|
+Z20 !s107 C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/Decoder.vhd|
 !i113 1
 R12
 R13
@@ -78,7 +78,7 @@ Artl
 R2
 R3
 DEx4 work 7 decoder 0 22 N6T0NYLKK:C:Z9UgP72^R3
-!i122 12
+!i122 21
 l14
 L13 10
 Vne9HQffAQhoH0a4IV;aeN0
@@ -93,26 +93,67 @@ R20
 !i113 1
 R12
 R13
+Ematrixprocessor
+Z21 w1703234110
+R2
+R3
+!i122 23
+R4
+Z22 8C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/MatrixProcessor.vhd
+Z23 FC:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/MatrixProcessor.vhd
+l0
+L4 1
+VQ0;Q^7bL:ZU[gMJL0DT^]1
+!s100 G32?ifLLcNZ67AGh3Vm^n1
+R7
+32
+Z24 !s110 1703234126
+!i10b 1
+Z25 !s108 1703234126.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/MatrixProcessor.vhd|
+Z27 !s107 C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/MatrixProcessor.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+Z28 DEx4 work 15 matrixprocessor 0 22 Q0;Q^7bL:ZU[gMJL0DT^]1
+!i122 23
+l134
+L12 219
+VQJ>BC3ZmP@mI4oU6jke293
+!s100 _Vmfi_U=QQU8`]3V>Ee[E0
+R7
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R12
+R13
 Eram
-Z21 w1702704476
+Z29 w1703232749
 R1
 R2
 R3
-!i122 15
+!i122 19
 R4
-Z22 8C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd
-Z23 FC:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd
+Z30 8C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ram.vhd
+Z31 FC:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ram.vhd
 l0
 L6 1
-VGNfeoVRj_MAzDo<g82SZm3
-!s100 aGWM;QN:_:1ATF@?eMdV02
+V967?=9L80oVZgf;GaibbE3
+!s100 A39bd4I?A[0ZP]EaM51Gg1
 R7
 32
-Z24 !s110 1702704479
+Z32 !s110 1703232908
 !i10b 1
-Z25 !s108 1702704479.000000
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd|
-!s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd|
+Z33 !s108 1703232908.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ram.vhd|
+Z35 !s107 C:/Users/Monica Vierin Pasman/Documents/Proyek Akhir/ram.vhd|
 !i113 1
 R12
 R13
@@ -120,19 +161,19 @@ Artl
 R1
 R2
 R3
-DEx4 work 3 ram 0 22 GNfeoVRj_MAzDo<g82SZm3
-!i122 15
-l48
-L37 35
-VKWYH7lUkTVLHUFihTk7?b3
-!s100 QRDUV[42WaEN>BXV2P<Ef0
+DEx4 work 3 ram 0 22 967?=9L80oVZgf;GaibbE3
+!i122 19
+l67
+L51 55
+V^C[fnZW;Q1L]?L=5zn7o60
+!s100 =73XXCI]Sg>;DNZ8?0_]H0
 R7
 32
-R24
+R32
 !i10b 1
-R25
-R26
-Z27 !s107 C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd|
+R33
+R34
+R35
 !i113 1
 R12
 R13
