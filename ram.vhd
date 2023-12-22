@@ -11,25 +11,40 @@ entity RAM is
         RAM_ADDR_A : in std_logic_vector(4 downto 0); 
         RAM_ADDR_B : in std_logic_vector(4 downto 0); 
 
-        -- Nilai input matriks 2x2 untuk register RAM
+        -- Nilai input matriks 3x3 untuk register RAM
         RAM_MATRIX_IN_11 : in std_logic_vector(7 downto 0);
         RAM_MATRIX_IN_12 : in std_logic_vector(7 downto 0);
+        RAM_MATRIX_IN_13 : in std_logic_vector(7 downto 0);
         RAM_MATRIX_IN_21 : in std_logic_vector(7 downto 0);
         RAM_MATRIX_IN_22 : in std_logic_vector(7 downto 0);
+        RAM_MATRIX_IN_23 : in std_logic_vector(7 downto 0);
+        RAM_MATRIX_IN_31 : in std_logic_vector(7 downto 0);
+        RAM_MATRIX_IN_32 : in std_logic_vector(7 downto 0);
+        RAM_MATRIX_IN_33 : in std_logic_vector(7 downto 0);
         
         -- Sinyal enable untuk RAM
         RAM_WR : in std_logic; 
 
-        -- Nilai output matriks 2x2 dari register RAM yang dipilih
+        -- Nilai output matriks 3x3 dari register RAM yang dipilih
         RAM_MATRIX_OUT_11_A : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_12_A : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_13_A : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_21_A : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_22_A : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_23_A : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_31_A : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_32_A : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_33_A : out std_logic_vector(7 downto 0);
 
         RAM_MATRIX_OUT_11_B : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_12_B : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_13_B : out std_logic_vector(7 downto 0);
         RAM_MATRIX_OUT_21_B : out std_logic_vector(7 downto 0);
-        RAM_MATRIX_OUT_22_B : out std_logic_vector(7 downto 0)
+        RAM_MATRIX_OUT_22_B : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_23_B : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_31_B : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_32_B : out std_logic_vector(7 downto 0);
+        RAM_MATRIX_OUT_33_B : out std_logic_vector(7 downto 0)
     );
 end entity RAM;
 
@@ -39,8 +54,13 @@ architecture rtl of RAM is
     
     signal registers_11 : RegisterArray := (others => (others => '0'));
     signal registers_12 : RegisterArray := (others => (others => '0'));
+    signal registers_13 : RegisterArray := (others => (others => '0'));
     signal registers_21 : RegisterArray := (others => (others => '0'));
     signal registers_22 : RegisterArray := (others => (others => '0'));
+    signal registers_23 : RegisterArray := (others => (others => '0'));
+    signal registers_31 : RegisterArray := (others => (others => '0'));
+    signal registers_32 : RegisterArray := (others => (others => '0'));
+    signal registers_33 : RegisterArray := (others => (others => '0'));
 
     -- initial values in the RAM, set defaults to 0
 
@@ -51,19 +71,34 @@ begin
         if RAM_WR = '1' then
             registers_11(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_11;
             registers_12(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_12;
+            registers_13(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_13;
             registers_21(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_21;
             registers_22(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_22;
+            registers_23(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_23;
+            registers_31(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_31;
+            registers_32(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_32;
+            registers_33(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_33;
         -- Ketika sinyal enable bernilai '0', maka mengeluarkan 2 buah nilai matriks 2x2 dari register memori yang dipilih
         else 
             RAM_MATRIX_OUT_11_A <= registers_11(to_integer(unsigned(RAM_ADDR_A)));
             RAM_MATRIX_OUT_12_A <= registers_12(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_13_A <= registers_13(to_integer(unsigned(RAM_ADDR_A)));
             RAM_MATRIX_OUT_21_A <= registers_21(to_integer(unsigned(RAM_ADDR_A)));
             RAM_MATRIX_OUT_22_A <= registers_22(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_23_A <= registers_23(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_31_A <= registers_31(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_32_A <= registers_32(to_integer(unsigned(RAM_ADDR_A)));
+            RAM_MATRIX_OUT_33_A <= registers_33(to_integer(unsigned(RAM_ADDR_A)));
 
             RAM_MATRIX_OUT_11_B <= registers_11(to_integer(unsigned(RAM_ADDR_B)));
             RAM_MATRIX_OUT_12_B <= registers_12(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_13_B <= registers_13(to_integer(unsigned(RAM_ADDR_B)));
             RAM_MATRIX_OUT_21_B <= registers_21(to_integer(unsigned(RAM_ADDR_B)));
             RAM_MATRIX_OUT_22_B <= registers_22(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_23_B <= registers_23(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_31_B <= registers_31(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_32_B <= registers_32(to_integer(unsigned(RAM_ADDR_B)));
+            RAM_MATRIX_OUT_33_B <= registers_33(to_integer(unsigned(RAM_ADDR_B)));
         end if;
 
     end process;
