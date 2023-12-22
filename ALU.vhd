@@ -17,34 +17,49 @@ ENTITY ALU IS
 
         -- Operand D untuk menyimpan hasil matriks
         OPERAND_11_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-        OPERAND_12_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_12_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_13_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_21_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); 
         OPERAND_22_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_23_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_31_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_32_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_33_D : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
 
         -- Operand A untuk melakukan operasi matriks 
         OPERAND_11_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_12_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_13_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_21_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
         OPERAND_22_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_23_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_31_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_32_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_33_A : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 
         -- Operand B untuk melakukan operasi matriks 
         OPERAND_11_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_12_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_13_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
         OPERAND_21_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
-        OPERAND_22_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0)
+        OPERAND_22_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_23_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_31_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0); 
+        OPERAND_32_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+        OPERAND_33_B : IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+
     );
 END ENTITY ALU;
-    
 
 ARCHITECTURE rtl OF ALU IS
     signal Result_det_A, Result_det_B, Result_det_D : signed(7 downto 0) := (others => '0');
-    signal Result_D_11, Result_D_12, Result_D_21, Result_D_22 : signed(7 downto 0) := (others => '0');
+    signal Result_D_11, Result_D_12, Result_D_13, Result_D_21, Result_D_22, Result_D_23, Result_D_31, Result_D_32, Result_D_33 : signed(7 downto 0) := (others => '0');
 BEGIN
     
     -- Determinan matriks
 
-    Result_det_A <= resize(SIGNED(OPERAND_11_A) * SIGNED(OPERAND_22_A) - SIGNED(OPERAND_12_A) * SIGNED(OPERAND_21_A), Result_det_A'length);
-    Result_det_B <= resize(SIGNED(OPERAND_11_B) * SIGNED(OPERAND_22_B) - SIGNED(OPERAND_12_B) * SIGNED(OPERAND_21_B), Result_det_B'length);
+    Result_det_A <= resize((SIGNED(OPERAND_11_A) * SIGNED(OPERAND_22_A) * SIGNED(OPERAND_33_A)) + (SIGNED(OPERAND_12_A) * SIGNED(OPERAND_23_A) * SIGNED(OPERAND_31_A)) + (SIGNED(OPERAND_13_A) * SIGNED(OPERAND_21_A) * SIGNED(OPERAND_32_A)) - (SIGNED(OPERAND_31_A) * SIGNED(OPERAND_22_A) * SIGNED(OPERAND_13_A)) - (SIGNED(OPERAND_32_A) * SIGNED(OPERAND_23_A) * SIGNED(OPERAND_11_A)) - (SIGNED(OPERAND_33_A) * SIGNED(OPERAND_21_A) * SIGNED(OPERAND_12_A)), Result_det_A'length);
+    Result_det_B <= resize((SIGNED(OPERAND_11_B) * SIGNED(OPERAND_22_B) * SIGNED(OPERAND_33_B)) + (SIGNED(OPERAND_12_B) * SIGNED(OPERAND_23_B) * SIGNED(OPERAND_31_B)) + (SIGNED(OPERAND_13_B) * SIGNED(OPERAND_21_B) * SIGNED(OPERAND_32_B)) - (SIGNED(OPERAND_31_B) * SIGNED(OPERAND_22_B) * SIGNED(OPERAND_13_B)) - (SIGNED(OPERAND_32_B) * SIGNED(OPERAND_23_B) * SIGNED(OPERAND_11_B)) - (SIGNED(OPERAND_33_B) * SIGNED(OPERAND_21_B) * SIGNED(OPERAND_12_B)), Result_det_B'length);
     Result_det_D <= resize(Result_D_11 * Result_D_22 - Result_D_12 * Result_D_21, Result_det_D'length);
 
     -- Data Flow
@@ -67,44 +82,75 @@ BEGIN
             WHEN "000" =>
                 Result_D_11 <= (SIGNED(OPERAND_11_A) + SIGNED(OPERAND_11_B));
                 Result_D_12 <= (SIGNED(OPERAND_12_A) + SIGNED(OPERAND_12_B));
+                Result_D_13 <= (SIGNED(OPERAND_13_A) + SIGNED(OPERAND_13_B));
                 Result_D_21 <= (SIGNED(OPERAND_21_A) + SIGNED(OPERAND_21_B));
                 Result_D_22 <= (SIGNED(OPERAND_22_A) + SIGNED(OPERAND_22_B));
+                Result_D_23 <= (SIGNED(OPERAND_23_A) + SIGNED(OPERAND_23_B));
+                Result_D_31 <= (SIGNED(OPERAND_31_A) + SIGNED(OPERAND_31_B));
+                Result_D_32 <= (SIGNED(OPERAND_32_A) + SIGNED(OPERAND_32_B));
+                Result_D_33 <= (SIGNED(OPERAND_33_A) + SIGNED(OPERAND_33_B));
             -- Pengurangan matriks
             WHEN "001" =>
                 Result_D_11 <= (SIGNED(OPERAND_11_A) - SIGNED(OPERAND_11_B));
                 Result_D_12 <= (SIGNED(OPERAND_12_A) - SIGNED(OPERAND_12_B));
+                Result_D_13 <= (SIGNED(OPERAND_13_A) - SIGNED(OPERAND_13_B));
                 Result_D_21 <= (SIGNED(OPERAND_21_A) - SIGNED(OPERAND_21_B));
                 Result_D_22 <= (SIGNED(OPERAND_22_A) - SIGNED(OPERAND_22_B));
+                Result_D_23 <= (SIGNED(OPERAND_23_A) - SIGNED(OPERAND_23_B));
+                Result_D_31 <= (SIGNED(OPERAND_31_A) - SIGNED(OPERAND_31_B));
+                Result_D_32 <= (SIGNED(OPERAND_32_A) - SIGNED(OPERAND_32_B));
+                Result_D_33 <= (SIGNED(OPERAND_33_A) - SIGNED(OPERAND_33_B));
             -- Pencerminan matriks sumbu x
             WHEN "010" =>
                 Result_D_11 <= (SIGNED(OPERAND_11_A));
                 Result_D_12 <= (SIGNED(NOT OPERAND_12_A) + 1);
+                Result_D_13 <= (SIGNED(OPERAND_13_A));
                 Result_D_21 <= (SIGNED(OPERAND_21_A));
                 Result_D_22 <= (SIGNED(NOT OPERAND_22_A) + 1);
+                Result_D_23 <= (SIGNED(OPERAND_23_A));
+                Result_D_31 <= (SIGNED(OPERAND_31_A));
+                Result_D_32 <= (SIGNED(NOT OPERAND_32_A) + 1);
+                Result_D_33 <= (SIGNED(OPERAND_33_A));
             -- Pencerminan matriks sumbu y
             WHEN "011" =>
                 Result_D_11 <= (SIGNED(NOT OPERAND_11_A) + 1);
                 Result_D_12 <= (SIGNED(OPERAND_12_A));
+                Result_D_13 <= (SIGNED(OPERAND_13_A));
                 Result_D_21 <= (SIGNED(NOT OPERAND_21_A) + 1);
                 Result_D_22 <= (SIGNED(OPERAND_22_A));
-            -- Pencerminan matriks A terhadap garis y = x
+                Result_D_23 <= (SIGNED(OPERAND_23_A));
+                Result_D_31 <= (SIGNED(NOT OPERAND_31_A) + 1);
+                Result_D_32 <= (SIGNED(OPERAND_32_A));
+                Result_D_33 <= (SIGNED(OPERAND_33_A));
+            -- Pencerminan matriks A terhadap sumbu z
             WHEN "100" =>
-                Result_D_11 <= (SIGNED(NOT OPERAND_11_A) + 1);
-                Result_D_12 <= (SIGNED(NOT OPERAND_12_A) + 1);
-                Result_D_21 <= (SIGNED(NOT OPERAND_21_A) + 1);
-                Result_D_22 <= (SIGNED(NOT OPERAND_22_A) + 1);
+            Result_D_11 <= (SIGNED(NOT OPERAND_11_A) + 1);
+            Result_D_12 <= (SIGNED(NOT OPERAND_12_A) + 1);
+            Result_D_13 <= (SIGNED(OPERAND_13_A));
+            Result_D_21 <= (SIGNED(NOT OPERAND_21_A) + 1);
+            Result_D_22 <= (SIGNED(NOT OPERAND_22_A) + 1);
+            Result_D_23 <= (SIGNED(OPERAND_23_A));
+            Result_D_31 <= (SIGNED(NOT OPERAND_31_A) + 1);
+            Result_D_32 <= (SIGNED(NOT OPERAND_32_A) + 1);
+            Result_D_33 <= (SIGNED(OPERAND_33_A));
             -- Transpose matriks A
             WHEN "101" =>
                 Result_D_11 <= (SIGNED(OPERAND_11_A));
                 Result_D_12 <= (SIGNED(OPERAND_21_A));
+                Result_D_13 <= (SIGNED(OPERAND_31_A));
+                Result_D_13 <= (SIGNED(OPERAND_31_A));
                 Result_D_21 <= (SIGNED(OPERAND_12_A));
                 Result_D_22 <= (SIGNED(OPERAND_22_A));
+                Result_D_23 <= (SIGNED(OPERAND_32_A));
+                Result_D_31 <= (SIGNED(OPERAND_13_A));
+                Result_D_32 <= (Signed(OPERAND_23_A));
+                Result_D_33 <= (SIGNED(OPERAND_33_A));
             -- Kofaktor matriks A
             WHEN "110" =>
                 Result_D_11 <= (SIGNED(OPERAND_22_A));
                 Result_D_12 <= (SIGNED(NOT OPERAND_12_A) + 1);
                 Result_D_21 <= (SIGNED(NOT OPERAND_21_A) + 1);
-                Result_D_22 <= (SIGNED(OPERAND_11_A));
+                Result_D_22 <= (SIGNED(OPERAND_11_A)) := 
             -- Perkalian Matriks
             WHEN "111" =>
                 Result_D_11 <= resize(SIGNED(OPERAND_11_A) * SIGNED(OPERAND_11_B) + SIGNED(OPERAND_12_A) * SIGNED(OPERAND_21_B), Result_D_11'length);

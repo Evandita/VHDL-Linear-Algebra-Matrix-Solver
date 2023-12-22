@@ -1,22 +1,27 @@
-C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/RAM.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/RAM.vhd
+C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/RAM.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\RAM.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
 -- Compiling entity RAM
-** Error: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/RAM.vhd(34): near ")": (vcom-1576) expecting IDENTIFIER.
+-- Compiling architecture rtl of RAM
 
-} {8.0 9.0} {}} C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd
+} {} {}} C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ALU.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\ALU.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ALU
+-- Compiling architecture rtl of ALU
+
+} {} {}} C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\Evandita\Documents\GitHub\Proyek-Akhir-PSD-Kelompok-BP06\DECODER.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Compiling entity DECODER
 -- Compiling architecture rtl of DECODER
-** Error: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd(18): Cannot drive signal 'OP1_ADDR' of mode IN.
-** Error: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd(19): Cannot drive signal 'OP2_ADDR' of mode IN.
-** Error: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd(20): Cannot drive signal 'OP3_ADDR' of mode IN.
-** Note: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/DECODER.vhd(22): VHDL Compiler exiting
 
-} {8.0 11.0} {}}
+} {} {}}

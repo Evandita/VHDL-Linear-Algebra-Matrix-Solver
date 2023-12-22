@@ -11,7 +11,6 @@ entity RAM is
         RAM_ADDR_A : in std_logic_vector(4 downto 0); 
         RAM_ADDR_B : in std_logic_vector(4 downto 0); 
 
-
         -- Nilai input matriks 2x2 untuk register RAM
         RAM_MATRIX_IN_11 : in std_logic_vector(7 downto 0);
         RAM_MATRIX_IN_12 : in std_logic_vector(7 downto 0);
