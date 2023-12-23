@@ -1,5 +1,5 @@
-Analysis & Synthesis report for ALU
-Sat Dec 16 12:33:32 2023
+Analysis & Elaboration report for ALU
+Sun Dec 17 13:57:18 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -7,18 +7,10 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis DSP Block Usage Summary
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -42,31 +34,42 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Dec 16 12:33:32 2023       ;
-; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name                   ; ALU                                         ;
-; Top-level Entity Name           ; ALU                                         ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 155                                         ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 7                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Dec 17 13:57:18 2023       ;
+; Quartus Prime Version         ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                 ; ALU                                         ;
+; Top-level Entity Name         ; ALU                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -152,260 +155,77 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                           ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
-; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                   ;
-+---------------------------------------------+-----------------+
-; Resource                                    ; Usage           ;
-+---------------------------------------------+-----------------+
-; Estimate of Logic utilization (ALMs needed) ; 66              ;
-;                                             ;                 ;
-; Combinational ALUT usage for logic          ; 99              ;
-;     -- 7 input functions                    ; 0               ;
-;     -- 6 input functions                    ; 32              ;
-;     -- 5 input functions                    ; 24              ;
-;     -- 4 input functions                    ; 16              ;
-;     -- <=3 input functions                  ; 27              ;
-;                                             ;                 ;
-; Dedicated logic registers                   ; 0               ;
-;                                             ;                 ;
-; I/O pins                                    ; 155             ;
-;                                             ;                 ;
-; Total DSP Blocks                            ; 7               ;
-;                                             ;                 ;
-; Maximum fan-out node                        ; OPCODE[0]~input ;
-; Maximum fan-out                             ; 57              ;
-; Total fan-out                               ; 898             ;
-; Average fan-out                             ; 2.16            ;
-+---------------------------------------------+-----------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |ALU                       ; 99 (99)             ; 0 (0)                     ; 0                 ; 7          ; 155  ; 0            ; |ALU                ; ALU         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary ;
-+-------------------------------+--------------+
-; Statistic                     ; Number Used  ;
-+-------------------------------+--------------+
-; Sum of two 18x18              ; 7            ;
-; Total number of DSP blocks    ; 7            ;
-;                               ;              ;
-; Fixed Point Signed Multiplier ; 14           ;
-+-------------------------------+--------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|Add3                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |ALU|Add5                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|Add6                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |ALU|Add4                  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |ALU|Mux22                 ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |ALU|Mux14                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |ALU|Mux24                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|Add4                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|Add5                  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|Add6                  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ALU|Add3                  ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |ALU|Mux0                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 99                          ;
-;     arith             ; 36                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 16                          ;
-;     normal            ; 63                          ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 3                           ;
-;         5 data inputs ; 8                           ;
-;         6 data inputs ; 32                          ;
-; arriav_mac            ; 7                           ;
-; boundary_port         ; 155                         ;
-;                       ;                             ;
-; Max LUT depth         ; 3.70                        ;
-; Average LUT depth     ; 2.60                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Sat Dec 16 12:33:20 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
+    Info: Processing started: Sun Dec 17 13:56:57 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning (12125): Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ALU-rtl File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 39
-    Info (12023): Found entity 1: ALU File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 5
+    Info (12022): Found design unit 1: ALU-rtl File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 39
+    Info (12023): Found entity 1: ALU File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 5
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at alu.vhd(65): signal "OPCODE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 69
-Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 69
-Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at alu.vhd(80): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at alu.vhd(81): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 81
-Warning (10492): VHDL Process Statement warning at alu.vhd(82): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 82
-Warning (10492): VHDL Process Statement warning at alu.vhd(83): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at alu.vhd(86): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at alu.vhd(87): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 87
-Warning (10492): VHDL Process Statement warning at alu.vhd(88): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at alu.vhd(89): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 89
-Warning (10492): VHDL Process Statement warning at alu.vhd(92): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 92
-Warning (10492): VHDL Process Statement warning at alu.vhd(93): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 93
-Warning (10492): VHDL Process Statement warning at alu.vhd(94): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 94
-Warning (10492): VHDL Process Statement warning at alu.vhd(95): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 95
-Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 98
-Warning (10492): VHDL Process Statement warning at alu.vhd(99): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at alu.vhd(100): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at alu.vhd(101): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at alu.vhd(104): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at alu.vhd(105): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 105
-Warning (10492): VHDL Process Statement warning at alu.vhd(106): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 106
-Warning (10492): VHDL Process Statement warning at alu.vhd(107): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 107
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 113
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 32 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "PRG_CNT[0]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[1]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[2]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[3]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[4]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[5]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[6]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[7]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[8]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[9]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[10]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[11]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[12]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[13]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[14]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[15]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[16]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[17]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[18]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[19]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[20]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[21]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[22]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[23]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[24]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[25]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[26]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[27]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[28]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[29]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[30]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-    Warning (15610): No output dependent on input pin "PRG_CNT[31]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 8
-Info (21057): Implemented 261 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 99 input pins
-    Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 99 logic cells
-    Info (21062): Implemented 7 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
-    Info: Peak virtual memory: 4900 megabytes
-    Info: Processing ended: Sat Dec 16 12:33:32 2023
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:11
+Warning (10492): VHDL Process Statement warning at alu.vhd(65): signal "OPCODE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at alu.vhd(80): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at alu.vhd(81): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at alu.vhd(82): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at alu.vhd(83): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at alu.vhd(86): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at alu.vhd(87): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at alu.vhd(88): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at alu.vhd(89): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at alu.vhd(92): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at alu.vhd(93): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at alu.vhd(94): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at alu.vhd(95): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at alu.vhd(99): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at alu.vhd(100): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at alu.vhd(101): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at alu.vhd(104): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at alu.vhd(105): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at alu.vhd(106): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at alu.vhd(107): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Sun Dec 17 13:57:18 2023
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:32
 
 

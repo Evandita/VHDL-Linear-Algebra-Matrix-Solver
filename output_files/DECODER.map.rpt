@@ -1,5 +1,5 @@
-Analysis & Synthesis report for DECODER
-Sat Dec 16 22:00:27 2023
+Analysis & Elaboration report for DECODER
+Sun Dec 17 13:58:43 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -7,16 +7,10 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -40,31 +34,42 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Dec 16 22:00:27 2023       ;
-; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name                   ; DECODER                                     ;
-; Top-level Entity Name           ; DECODER                                     ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 68                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Dec 17 13:58:43 2023       ;
+; Quartus Prime Version         ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                 ; DECODER                                     ;
+; Top-level Entity Name         ; DECODER                                     ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -150,164 +155,28 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------+---------+
-; decoder.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------------------+---------+
-
-
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 0          ;
-;                                             ;            ;
-; Combinational ALUT usage for logic          ; 0          ;
-;     -- 7 input functions                    ; 0          ;
-;     -- 6 input functions                    ; 0          ;
-;     -- 5 input functions                    ; 0          ;
-;     -- 4 input functions                    ; 0          ;
-;     -- <=3 input functions                  ; 0          ;
-;                                             ;            ;
-; Dedicated logic registers                   ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 68         ;
-;                                             ;            ;
-; Total DSP Blocks                            ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; PRG_CNT[0] ;
-; Maximum fan-out                             ; 1          ;
-; Total fan-out                               ; 86         ;
-; Average fan-out                             ; 0.63       ;
-+---------------------------------------------+------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |DECODER                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 68   ; 0            ; |DECODER            ; DECODER     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 68                              ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Sat Dec 16 22:00:15 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DECODER -c DECODER
+    Info: Processing started: Sun Dec 17 13:58:21 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DECODER -c DECODER --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Warning (12125): Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: DECODER-rtl File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 13
-    Info (12023): Found entity 1: DECODER File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 4
+    Info (12022): Found design unit 1: DECODER-rtl File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 13
+    Info (12023): Found entity 1: DECODER File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 4
 Info (12127): Elaborating entity "DECODER" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at decoder.vhd(17): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 17
-Warning (10492): VHDL Process Statement warning at decoder.vhd(18): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 18
-Warning (10492): VHDL Process Statement warning at decoder.vhd(19): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 19
-Warning (10492): VHDL Process Statement warning at decoder.vhd(20): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 20
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 32 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "PRG_CNT[0]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[1]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[2]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[3]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[4]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[5]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[6]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[7]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[8]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[9]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[10]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[11]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[12]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[13]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[14]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[15]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[16]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[17]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[18]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[19]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[20]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[21]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[22]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[23]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[24]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[25]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[26]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[27]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[28]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[29]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[30]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-    Warning (15610): No output dependent on input pin "PRG_CNT[31]" File: C:/Users/Hanif/Documents/DEV/VHDL/Proyek-Akhir-PSD-Kelompok-BP06-main/decoder.vhd Line: 6
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 50 input pins
-    Info (21059): Implemented 18 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Sat Dec 16 22:00:27 2023
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:09
+Warning (10492): VHDL Process Statement warning at decoder.vhd(17): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at decoder.vhd(18): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at decoder.vhd(19): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at decoder.vhd(20): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 20
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Sun Dec 17 13:58:43 2023
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:32
 
 

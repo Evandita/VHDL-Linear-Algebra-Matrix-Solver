@@ -67,7 +67,7 @@ architecture rtl of RAM is
 begin
     process(PRG_CNT)
     begin
-        -- Ketika sinyal enable bernilai '1', maka memasukkan nilai matriks 2x2 pada register memori yang dituju
+        -- Ketika sinyal enable bernilai '1', maka memasukkan nilai matriks 3x3 pada register memori yang dituju
         if RAM_WR = '1' then
             registers_11(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_11;
             registers_12(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_12;
@@ -78,7 +78,7 @@ begin
             registers_31(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_31;
             registers_32(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_32;
             registers_33(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_33;
-        -- Ketika sinyal enable bernilai '0', maka mengeluarkan 2 buah nilai matriks 2x2 dari register memori yang dipilih
+        -- Ketika sinyal enable bernilai '0', maka mengeluarkan 2 buah nilai matriks 3x3 dari register memori yang dipilih
         else 
             RAM_MATRIX_OUT_11_A <= registers_11(to_integer(unsigned(RAM_ADDR_A)));
             RAM_MATRIX_OUT_12_A <= registers_12(to_integer(unsigned(RAM_ADDR_A)));

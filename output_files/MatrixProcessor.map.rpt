@@ -1,5 +1,5 @@
-Analysis & Synthesis report for RAM
-Sun Dec 17 14:31:32 2023
+Analysis & Elaboration report for MatrixProcessor
+Sun Dec 17 14:33:34 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -7,11 +7,11 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Elapsed Time Per Partition
-  6. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "ALU:ALU1"
+  6. Analysis & Elaboration Messages
 
 
 
@@ -35,31 +35,47 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Dec 17 14:31:32 2023           ;
-; Quartus Prime Version       ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name               ; RAM                                         ;
-; Top-level Entity Name       ; RAM                                         ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sun Dec 17 14:33:34 2023       ;
+; Quartus Prime Version         ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                 ; MatrixProcessor                             ;
+; Top-level Entity Name         ; MatrixProcessor                             ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; RAM                ; RAM                ;
+; Top-level entity name                                                           ; MatrixProcessor    ; MatrixProcessor    ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -140,45 +156,94 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU1"                                                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; deter_mat_a ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; deter_mat_b ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; deter_mat_d ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Sun Dec 17 14:31:06 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RAM -c RAM
+    Info: Processing started: Sun Dec 17 14:33:10 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MatrixProcessor -c MatrixProcessor --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (12125): Using design file matrixprocessor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: MatrixProcessor-rtl File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 12
+    Info (12023): Found entity 1: MatrixProcessor File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 4
+Info (12127): Elaborating entity "MatrixProcessor" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(53): object "DETER_MAT_A_s" assigned a value but never read File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 53
+Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(53): object "DETER_MAT_B_s" assigned a value but never read File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 53
+Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(53): object "DETER_MAT_D_s" assigned a value but never read File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(109): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(116): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(121): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(125): signal "OP2_ADDR_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(128): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(133): signal "OP1_ADDR_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(135): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 135
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(101): inferring latch(es) for signal or variable "Program_Counter", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(101): inferring latch(es) for signal or variable "RAM_ADDR_A_s", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(101): inferring latch(es) for signal or variable "RAM_WR_s", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "RAM_WR_s" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "RAM_ADDR_A_s[0]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "RAM_ADDR_A_s[1]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "RAM_ADDR_A_s[2]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "RAM_ADDR_A_s[3]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "RAM_ADDR_A_s[4]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[0]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[1]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[2]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[3]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[4]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[5]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[6]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[7]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[8]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[9]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[10]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[11]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[12]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[13]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[14]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[15]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[16]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[17]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[18]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[19]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[20]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[21]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[22]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[23]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[24]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[25]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[26]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[27]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[28]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[29]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[30]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Info (10041): Inferred latch for "Program_Counter[31]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Warning (12125): Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: DECODER-rtl File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 13
+    Info (12023): Found entity 1: DECODER File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 4
+Info (12128): Elaborating entity "DECODER" for hierarchy "DECODER:DECODER1" File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 64
+Warning (10492): VHDL Process Statement warning at decoder.vhd(17): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at decoder.vhd(18): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at decoder.vhd(19): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at decoder.vhd(20): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 20
 Warning (12125): Using design file ram.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: RAM-rtl File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 36
     Info (12023): Found entity 1: RAM File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 6
-Info (12127): Elaborating entity "RAM" for the top level hierarchy
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM1" File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 73
 Warning (10492): VHDL Process Statement warning at ram.vhd(51): signal "RAM_WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 51
 Warning (10492): VHDL Process Statement warning at ram.vhd(52): signal "RAM_MATRIX_IN_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 52
 Warning (10492): VHDL Process Statement warning at ram.vhd(52): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 52
@@ -276,14 +341,67 @@ Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[4]" at ram.vhd(48) File: C
 Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
 Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
 Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Error (276000): Cannot synthesize initialized RAM logic "registers_11" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 40
-Error (276000): Cannot synthesize initialized RAM logic "registers_12" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 41
-Error (276000): Cannot synthesize initialized RAM logic "registers_21" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 42
-Error (276000): Cannot synthesize initialized RAM logic "registers_22" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 43
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 35 warnings
-    Error: Peak virtual memory: 4850 megabytes
-    Error: Processing ended: Sun Dec 17 14:31:32 2023
-    Error: Elapsed time: 00:00:26
-    Error: Total CPU time (on all processors): 00:00:37
+Warning (12125): Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ALU-rtl File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 39
+    Info (12023): Found entity 1: ALU File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 5
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1" File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at alu.vhd(65): signal "OPCODE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at alu.vhd(80): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at alu.vhd(81): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at alu.vhd(82): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at alu.vhd(83): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at alu.vhd(86): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at alu.vhd(87): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at alu.vhd(88): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at alu.vhd(89): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at alu.vhd(92): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at alu.vhd(93): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at alu.vhd(94): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at alu.vhd(95): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at alu.vhd(99): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at alu.vhd(100): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at alu.vhd(101): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at alu.vhd(104): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at alu.vhd(105): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at alu.vhd(106): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at alu.vhd(107): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 108 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Sun Dec 17 14:33:34 2023
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:34
 
 
