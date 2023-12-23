@@ -1,6 +1,6 @@
-Analysis & Elaboration Status : Successful - Sun Dec 17 13:58:43 2023
+Analysis & Elaboration Status : Successful - Sat Dec 23 22:33:06 2023
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-Revision Name : DECODER
+Revision Name : Decoder
 Top-level Entity Name : DECODER
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge

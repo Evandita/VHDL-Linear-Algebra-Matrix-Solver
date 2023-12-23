@@ -1,5 +1,5 @@
-Analysis & Synthesis report for RAM
-Sun Dec 17 14:31:32 2023
+Analysis & Elaboration report for ram
+Sat Dec 23 22:27:20 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -7,11 +7,10 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Elapsed Time Per Partition
-  6. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
 
 
 
@@ -35,31 +34,47 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Dec 17 14:31:32 2023           ;
-; Quartus Prime Version       ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name               ; RAM                                         ;
-; Top-level Entity Name       ; RAM                                         ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sat Dec 23 22:27:20 2023       ;
+; Quartus Prime Version         ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                 ; ram                                         ;
+; Top-level Entity Name         ; RAM                                         ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; RAM                ; RAM                ;
+; Top-level entity name                                                           ; ram                ; ram                ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -140,150 +155,241 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Sun Dec 17 14:31:06 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RAM -c RAM
+    Info: Processing started: Sat Dec 23 22:27:12 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ram -c ram --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Warning (12125): Using design file ram.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: RAM-rtl File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 36
-    Info (12023): Found entity 1: RAM File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 6
-Info (12127): Elaborating entity "RAM" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at ram.vhd(51): signal "RAM_WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at ram.vhd(52): signal "RAM_MATRIX_IN_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at ram.vhd(52): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at ram.vhd(53): signal "RAM_MATRIX_IN_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at ram.vhd(53): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at ram.vhd(54): signal "RAM_MATRIX_IN_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 54
-Warning (10492): VHDL Process Statement warning at ram.vhd(54): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 54
-Warning (10492): VHDL Process Statement warning at ram.vhd(55): signal "RAM_MATRIX_IN_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at ram.vhd(55): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at ram.vhd(58): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at ram.vhd(58): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at ram.vhd(59): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at ram.vhd(59): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at ram.vhd(60): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at ram.vhd(60): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at ram.vhd(61): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at ram.vhd(61): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at ram.vhd(63): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at ram.vhd(63): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at ram.vhd(64): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at ram.vhd(64): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at ram.vhd(65): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at ram.vhd(65): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at ram.vhd(66): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 66
-Warning (10492): VHDL Process Statement warning at ram.vhd(66): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 66
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Error (276000): Cannot synthesize initialized RAM logic "registers_11" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 40
-Error (276000): Cannot synthesize initialized RAM logic "registers_12" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 41
-Error (276000): Cannot synthesize initialized RAM logic "registers_21" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 42
-Error (276000): Cannot synthesize initialized RAM logic "registers_22" File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 43
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 35 warnings
-    Error: Peak virtual memory: 4850 megabytes
-    Error: Processing ended: Sun Dec 17 14:31:32 2023
-    Error: Elapsed time: 00:00:26
-    Error: Total CPU time (on all processors): 00:00:37
+    Info (12022): Found design unit 1: RAM-rtl File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 51
+    Info (12023): Found entity 1: RAM File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 6
+Info (12127): Elaborating entity "ram" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at ram.vhd(158): signal "RAM_WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at ram.vhd(159): signal "RAM_MATRIX_IN_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at ram.vhd(159): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at ram.vhd(160): signal "RAM_MATRIX_IN_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at ram.vhd(160): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at ram.vhd(161): signal "RAM_MATRIX_IN_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at ram.vhd(161): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at ram.vhd(162): signal "RAM_MATRIX_IN_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at ram.vhd(162): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at ram.vhd(163): signal "RAM_MATRIX_IN_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at ram.vhd(163): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at ram.vhd(164): signal "RAM_MATRIX_IN_23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at ram.vhd(164): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at ram.vhd(165): signal "RAM_MATRIX_IN_31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at ram.vhd(165): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at ram.vhd(166): signal "RAM_MATRIX_IN_32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at ram.vhd(166): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at ram.vhd(167): signal "RAM_MATRIX_IN_33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at ram.vhd(167): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at ram.vhd(170): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at ram.vhd(170): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at ram.vhd(171): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at ram.vhd(171): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at ram.vhd(172): signal "registers_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at ram.vhd(172): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at ram.vhd(173): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at ram.vhd(173): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at ram.vhd(174): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at ram.vhd(174): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at ram.vhd(175): signal "registers_23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at ram.vhd(175): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at ram.vhd(176): signal "registers_31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 176
+Warning (10492): VHDL Process Statement warning at ram.vhd(176): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 176
+Warning (10492): VHDL Process Statement warning at ram.vhd(177): signal "registers_32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at ram.vhd(177): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at ram.vhd(178): signal "registers_33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at ram.vhd(178): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at ram.vhd(180): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at ram.vhd(180): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at ram.vhd(181): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at ram.vhd(181): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at ram.vhd(182): signal "registers_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at ram.vhd(182): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at ram.vhd(183): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at ram.vhd(183): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at ram.vhd(184): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 184
+Warning (10492): VHDL Process Statement warning at ram.vhd(184): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 184
+Warning (10492): VHDL Process Statement warning at ram.vhd(185): signal "registers_23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 185
+Warning (10492): VHDL Process Statement warning at ram.vhd(185): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 185
+Warning (10492): VHDL Process Statement warning at ram.vhd(186): signal "registers_31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at ram.vhd(186): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at ram.vhd(187): signal "registers_32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at ram.vhd(187): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at ram.vhd(188): signal "registers_33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at ram.vhd(188): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 188
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_13_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_23_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_31_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_32_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_33_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_13_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_23_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_31_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_32_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_33_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 75 warnings
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Sat Dec 23 22:27:21 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:11
 
 

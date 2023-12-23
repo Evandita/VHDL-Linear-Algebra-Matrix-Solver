@@ -1,5 +1,5 @@
-Analysis & Elaboration report for MatrixProcessor
-Sun Dec 17 14:33:34 2023
+Analysis & Synthesis report for MatrixProcessor
+Sat Dec 23 22:37:39 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -7,11 +7,19 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "ALU:ALU1"
-  6. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |MatrixProcessor|current_state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "ALU:ALU1"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -35,42 +43,31 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun Dec 17 14:33:34 2023       ;
-; Quartus Prime Version         ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name                 ; MatrixProcessor                             ;
-; Top-level Entity Name         ; MatrixProcessor                             ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 2           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Dec 23 22:37:39 2023       ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                   ; MatrixProcessor                             ;
+; Top-level Entity Name           ; MatrixProcessor                             ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 20                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -156,6 +153,116 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
+; matrixprocessor.vhd              ; yes             ; Auto-Found VHDL File  ; C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd ;         ;
+; decoder.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd         ;         ;
+; ram.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd             ;         ;
+; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd             ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 0                 ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 0                 ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 0                 ;
+;     -- 5 input functions                    ; 0                 ;
+;     -- 4 input functions                    ; 0                 ;
+;     -- <=3 input functions                  ; 0                 ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 20                ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; INSTRUCTION_IN[0] ;
+; Maximum fan-out                             ; 1                 ;
+; Total fan-out                               ; 20                ;
+; Average fan-out                             ; 0.50              ;
++---------------------------------------------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
+; |MatrixProcessor           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 20   ; 0            ; |MatrixProcessor    ; MatrixProcessor ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |MatrixProcessor|current_state                                                                                                                     ;
++------------------------+------------------------+-----------------------+------------------------+----------------------+---------------------+--------------------+
+; Name                   ; current_state.COMPLETE ; current_state.EXECUTE ; current_state.READ_MEM ; current_state.DECODE ; current_state.FETCH ; current_state.IDLE ;
++------------------------+------------------------+-----------------------+------------------------+----------------------+---------------------+--------------------+
+; current_state.IDLE     ; 0                      ; 0                     ; 0                      ; 0                    ; 0                   ; 0                  ;
+; current_state.FETCH    ; 0                      ; 0                     ; 0                      ; 0                    ; 1                   ; 1                  ;
+; current_state.DECODE   ; 0                      ; 0                     ; 0                      ; 1                    ; 0                   ; 1                  ;
+; current_state.READ_MEM ; 0                      ; 0                     ; 1                      ; 0                    ; 0                   ; 1                  ;
+; current_state.EXECUTE  ; 0                      ; 1                     ; 0                      ; 0                    ; 0                   ; 1                  ;
+; current_state.COMPLETE ; 1                      ; 0                     ; 0                      ; 0                    ; 0                   ; 1                  ;
++------------------------+------------------------+-----------------------+------------------------+----------------------+---------------------+--------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; current_state.IDLE                    ; Lost fanout        ;
+; current_state.FETCH                   ; Lost fanout        ;
+; current_state.DECODE                  ; Lost fanout        ;
+; current_state.READ_MEM                ; Lost fanout        ;
+; current_state.EXECUTE                 ; Lost fanout        ;
+; current_state.COMPLETE                ; Lost fanout        ;
+; Total Number of Removed Registers = 6 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ALU:ALU1"                                                                                  ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -167,241 +274,540 @@ https://fpgasoftware.intel.com/eula.
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 20                              ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Sun Dec 17 14:33:10 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MatrixProcessor -c MatrixProcessor --analysis_and_elaboration
+    Info: Processing started: Sat Dec 23 22:37:30 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MatrixProcessor -c MatrixProcessor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Warning (12125): Using design file matrixprocessor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: MatrixProcessor-rtl File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 12
-    Info (12023): Found entity 1: MatrixProcessor File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 4
+    Info (12022): Found design unit 1: MatrixProcessor-rtl File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 12
+    Info (12023): Found entity 1: MatrixProcessor File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 4
 Info (12127): Elaborating entity "MatrixProcessor" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(53): object "DETER_MAT_A_s" assigned a value but never read File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 53
-Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(53): object "DETER_MAT_B_s" assigned a value but never read File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 53
-Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(53): object "DETER_MAT_D_s" assigned a value but never read File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(109): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 109
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(116): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 116
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(121): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 121
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(125): signal "OP2_ADDR_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 125
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(128): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 128
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(133): signal "OP1_ADDR_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 133
-Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(135): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 135
-Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(101): inferring latch(es) for signal or variable "Program_Counter", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(101): inferring latch(es) for signal or variable "RAM_ADDR_A_s", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(101): inferring latch(es) for signal or variable "RAM_WR_s", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "RAM_WR_s" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "RAM_ADDR_A_s[0]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "RAM_ADDR_A_s[1]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "RAM_ADDR_A_s[2]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "RAM_ADDR_A_s[3]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "RAM_ADDR_A_s[4]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[0]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[1]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[2]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[3]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[4]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[5]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[6]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[7]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[8]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[9]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[10]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[11]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[12]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[13]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[14]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[15]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[16]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[17]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[18]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[19]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[20]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[21]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[22]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[23]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[24]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[25]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[26]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[27]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[28]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[29]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[30]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
-Info (10041): Inferred latch for "Program_Counter[31]" at matrixprocessor.vhd(101) File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 101
+Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(125): object "DETER_MAT_A_s" assigned a value but never read File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 125
+Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(125): object "DETER_MAT_B_s" assigned a value but never read File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 125
+Warning (10036): Verilog HDL or VHDL warning at matrixprocessor.vhd(125): object "DETER_MAT_D_s" assigned a value but never read File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(183): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(190): signal "INSTRUCTION_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 190
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(191): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 191
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(196): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 196
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(200): signal "OP_ADDR2_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 200
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(203): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 203
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(208): signal "OP_ADDR1_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 208
+Warning (10492): VHDL Process Statement warning at matrixprocessor.vhd(210): signal "Program_Counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 210
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(175): inferring latch(es) for signal or variable "Program_Counter", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(175): inferring latch(es) for signal or variable "INSTRUCTION_s", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(175): inferring latch(es) for signal or variable "RAM_ADDR_A_s", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Warning (10631): VHDL Process Statement warning at matrixprocessor.vhd(175): inferring latch(es) for signal or variable "RAM_WR_s", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "RAM_WR_s" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "RAM_ADDR_A_s[0]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "RAM_ADDR_A_s[1]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "RAM_ADDR_A_s[2]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "RAM_ADDR_A_s[3]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "RAM_ADDR_A_s[4]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[0]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[1]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[2]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[3]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[4]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[5]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[6]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[7]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[8]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[9]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[10]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[11]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[12]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[13]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[14]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[15]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[16]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "INSTRUCTION_s[17]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[0]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[1]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[2]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[3]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[4]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[5]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[6]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[7]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[8]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[9]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[10]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[11]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[12]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[13]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[14]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[15]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[16]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[17]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[18]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[19]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[20]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[21]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[22]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[23]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[24]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[25]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[26]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[27]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[28]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[29]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[30]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
+Info (10041): Inferred latch for "Program_Counter[31]" at matrixprocessor.vhd(175) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 175
 Warning (12125): Using design file decoder.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: DECODER-rtl File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 13
-    Info (12023): Found entity 1: DECODER File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 4
-Info (12128): Elaborating entity "DECODER" for hierarchy "DECODER:DECODER1" File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at decoder.vhd(17): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 17
-Warning (10492): VHDL Process Statement warning at decoder.vhd(18): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 18
-Warning (10492): VHDL Process Statement warning at decoder.vhd(19): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 19
-Warning (10492): VHDL Process Statement warning at decoder.vhd(20): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/decoder.vhd Line: 20
+    Info (12022): Found design unit 1: DECODER-rtl File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 13
+    Info (12023): Found entity 1: DECODER File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 4
+Info (12128): Elaborating entity "DECODER" for hierarchy "DECODER:DECODER1" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at decoder.vhd(18): signal "INSTRUCTION_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at decoder.vhd(19): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 19
+Warning (10492): VHDL Process Statement warning at decoder.vhd(20): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at decoder.vhd(21): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 21
+Warning (10492): VHDL Process Statement warning at decoder.vhd(22): signal "INSTRUCTION" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/decoder.vhd Line: 22
 Warning (12125): Using design file ram.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: RAM-rtl File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 36
-    Info (12023): Found entity 1: RAM File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 6
-Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM1" File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 73
-Warning (10492): VHDL Process Statement warning at ram.vhd(51): signal "RAM_WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at ram.vhd(52): signal "RAM_MATRIX_IN_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at ram.vhd(52): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 52
-Warning (10492): VHDL Process Statement warning at ram.vhd(53): signal "RAM_MATRIX_IN_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at ram.vhd(53): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at ram.vhd(54): signal "RAM_MATRIX_IN_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 54
-Warning (10492): VHDL Process Statement warning at ram.vhd(54): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 54
-Warning (10492): VHDL Process Statement warning at ram.vhd(55): signal "RAM_MATRIX_IN_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at ram.vhd(55): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at ram.vhd(58): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at ram.vhd(58): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at ram.vhd(59): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at ram.vhd(59): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at ram.vhd(60): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at ram.vhd(60): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at ram.vhd(61): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at ram.vhd(61): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at ram.vhd(63): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at ram.vhd(63): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at ram.vhd(64): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at ram.vhd(64): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at ram.vhd(65): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at ram.vhd(65): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at ram.vhd(66): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 66
-Warning (10492): VHDL Process Statement warning at ram.vhd(66): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 66
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_A", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Warning (10631): VHDL Process Statement warning at ram.vhd(48): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_B", which holds its previous value in one or more paths through the process File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[0]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[1]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[2]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[3]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[4]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[5]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[6]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
-Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[7]" at ram.vhd(48) File: C:/Ivander/Code/VHDL/Final Project/ram.vhd Line: 48
+    Info (12022): Found design unit 1: RAM-rtl File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 51
+    Info (12023): Found entity 1: RAM File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 6
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:RAM1" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 145
+Warning (10492): VHDL Process Statement warning at ram.vhd(158): signal "RAM_WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at ram.vhd(159): signal "RAM_MATRIX_IN_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at ram.vhd(159): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at ram.vhd(160): signal "RAM_MATRIX_IN_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at ram.vhd(160): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at ram.vhd(161): signal "RAM_MATRIX_IN_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at ram.vhd(161): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at ram.vhd(162): signal "RAM_MATRIX_IN_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at ram.vhd(162): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at ram.vhd(163): signal "RAM_MATRIX_IN_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at ram.vhd(163): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at ram.vhd(164): signal "RAM_MATRIX_IN_23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at ram.vhd(164): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at ram.vhd(165): signal "RAM_MATRIX_IN_31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at ram.vhd(165): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 165
+Warning (10492): VHDL Process Statement warning at ram.vhd(166): signal "RAM_MATRIX_IN_32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at ram.vhd(166): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at ram.vhd(167): signal "RAM_MATRIX_IN_33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at ram.vhd(167): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at ram.vhd(170): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at ram.vhd(170): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at ram.vhd(171): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at ram.vhd(171): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at ram.vhd(172): signal "registers_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at ram.vhd(172): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at ram.vhd(173): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at ram.vhd(173): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at ram.vhd(174): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at ram.vhd(174): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at ram.vhd(175): signal "registers_23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at ram.vhd(175): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 175
+Warning (10492): VHDL Process Statement warning at ram.vhd(176): signal "registers_31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 176
+Warning (10492): VHDL Process Statement warning at ram.vhd(176): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 176
+Warning (10492): VHDL Process Statement warning at ram.vhd(177): signal "registers_32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at ram.vhd(177): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at ram.vhd(178): signal "registers_33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at ram.vhd(178): signal "RAM_ADDR_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 178
+Warning (10492): VHDL Process Statement warning at ram.vhd(180): signal "registers_11" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at ram.vhd(180): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at ram.vhd(181): signal "registers_12" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at ram.vhd(181): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 181
+Warning (10492): VHDL Process Statement warning at ram.vhd(182): signal "registers_13" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at ram.vhd(182): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 182
+Warning (10492): VHDL Process Statement warning at ram.vhd(183): signal "registers_21" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at ram.vhd(183): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at ram.vhd(184): signal "registers_22" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 184
+Warning (10492): VHDL Process Statement warning at ram.vhd(184): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 184
+Warning (10492): VHDL Process Statement warning at ram.vhd(185): signal "registers_23" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 185
+Warning (10492): VHDL Process Statement warning at ram.vhd(185): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 185
+Warning (10492): VHDL Process Statement warning at ram.vhd(186): signal "registers_31" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at ram.vhd(186): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at ram.vhd(187): signal "registers_32" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at ram.vhd(187): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 187
+Warning (10492): VHDL Process Statement warning at ram.vhd(188): signal "registers_33" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 188
+Warning (10492): VHDL Process Statement warning at ram.vhd(188): signal "RAM_ADDR_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 188
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_13_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_23_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_31_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_32_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_33_A", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_11_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_12_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_13_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_21_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_22_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_23_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_31_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_32_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Warning (10631): VHDL Process Statement warning at ram.vhd(155): inferring latch(es) for signal or variable "RAM_MATRIX_OUT_33_B", which holds its previous value in one or more paths through the process File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_B[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_33_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_32_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_31_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_23_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_22_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_21_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_13_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_12_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[0]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[1]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[2]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[3]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[4]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[5]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[6]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
+Info (10041): Inferred latch for "RAM_MATRIX_OUT_11_A[7]" at ram.vhd(155) File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/ram.vhd Line: 155
 Warning (12125): Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ALU-rtl File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 39
-    Info (12023): Found entity 1: ALU File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 5
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1" File: C:/Ivander/Code/VHDL/Final Project/matrixprocessor.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at alu.vhd(65): signal "OPCODE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 65
-Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at alu.vhd(68): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 68
-Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 69
-Warning (10492): VHDL Process Statement warning at alu.vhd(69): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 69
-Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at alu.vhd(70): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 70
-Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at alu.vhd(71): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 71
-Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at alu.vhd(74): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at alu.vhd(75): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 75
-Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at alu.vhd(76): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 76
-Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at alu.vhd(77): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at alu.vhd(80): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at alu.vhd(81): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 81
-Warning (10492): VHDL Process Statement warning at alu.vhd(82): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 82
-Warning (10492): VHDL Process Statement warning at alu.vhd(83): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at alu.vhd(86): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at alu.vhd(87): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 87
-Warning (10492): VHDL Process Statement warning at alu.vhd(88): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at alu.vhd(89): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 89
-Warning (10492): VHDL Process Statement warning at alu.vhd(92): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 92
-Warning (10492): VHDL Process Statement warning at alu.vhd(93): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 93
-Warning (10492): VHDL Process Statement warning at alu.vhd(94): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 94
-Warning (10492): VHDL Process Statement warning at alu.vhd(95): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 95
-Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 98
-Warning (10492): VHDL Process Statement warning at alu.vhd(99): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 99
-Warning (10492): VHDL Process Statement warning at alu.vhd(100): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at alu.vhd(101): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at alu.vhd(104): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at alu.vhd(105): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 105
-Warning (10492): VHDL Process Statement warning at alu.vhd(106): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 106
-Warning (10492): VHDL Process Statement warning at alu.vhd(107): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 107
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 111
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Ivander/Code/VHDL/Final Project/alu.vhd Line: 113
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 108 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Sun Dec 17 14:33:34 2023
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:34
+    Info (12022): Found design unit 1: ALU-rtl File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 54
+    Info (12023): Found entity 1: ALU File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 5
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU1" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at alu.vhd(82): signal "OPCODE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at alu.vhd(85): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at alu.vhd(85): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at alu.vhd(86): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at alu.vhd(86): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at alu.vhd(87): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at alu.vhd(87): signal "OPERAND_13_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 87
+Warning (10492): VHDL Process Statement warning at alu.vhd(88): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at alu.vhd(88): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at alu.vhd(89): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at alu.vhd(89): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at alu.vhd(90): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at alu.vhd(90): signal "OPERAND_23_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at alu.vhd(91): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at alu.vhd(91): signal "OPERAND_31_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at alu.vhd(92): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at alu.vhd(92): signal "OPERAND_32_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 92
+Warning (10492): VHDL Process Statement warning at alu.vhd(93): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at alu.vhd(93): signal "OPERAND_33_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at alu.vhd(96): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at alu.vhd(96): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at alu.vhd(97): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at alu.vhd(97): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 97
+Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "OPERAND_13_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at alu.vhd(99): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at alu.vhd(99): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at alu.vhd(100): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at alu.vhd(100): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at alu.vhd(101): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at alu.vhd(101): signal "OPERAND_23_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at alu.vhd(102): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at alu.vhd(102): signal "OPERAND_31_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at alu.vhd(103): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at alu.vhd(103): signal "OPERAND_32_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at alu.vhd(104): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at alu.vhd(104): signal "OPERAND_33_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at alu.vhd(107): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at alu.vhd(108): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at alu.vhd(109): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at alu.vhd(110): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at alu.vhd(111): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(113): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at alu.vhd(114): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 114
+Warning (10492): VHDL Process Statement warning at alu.vhd(115): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at alu.vhd(118): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 118
+Warning (10492): VHDL Process Statement warning at alu.vhd(119): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 119
+Warning (10492): VHDL Process Statement warning at alu.vhd(120): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at alu.vhd(121): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at alu.vhd(122): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 122
+Warning (10492): VHDL Process Statement warning at alu.vhd(123): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at alu.vhd(124): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at alu.vhd(125): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at alu.vhd(126): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at alu.vhd(129): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 129
+Warning (10492): VHDL Process Statement warning at alu.vhd(130): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 130
+Warning (10492): VHDL Process Statement warning at alu.vhd(131): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at alu.vhd(132): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at alu.vhd(133): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at alu.vhd(134): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at alu.vhd(135): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 135
+Warning (10492): VHDL Process Statement warning at alu.vhd(136): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at alu.vhd(137): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 137
+Warning (10492): VHDL Process Statement warning at alu.vhd(140): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at alu.vhd(141): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 141
+Warning (10492): VHDL Process Statement warning at alu.vhd(142): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 142
+Warning (10492): VHDL Process Statement warning at alu.vhd(143): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 143
+Warning (10492): VHDL Process Statement warning at alu.vhd(144): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 144
+Warning (10492): VHDL Process Statement warning at alu.vhd(145): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 145
+Warning (10492): VHDL Process Statement warning at alu.vhd(146): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 146
+Warning (10492): VHDL Process Statement warning at alu.vhd(147): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at alu.vhd(148): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at alu.vhd(152): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at alu.vhd(152): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at alu.vhd(152): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at alu.vhd(152): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at alu.vhd(153): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at alu.vhd(153): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at alu.vhd(153): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at alu.vhd(153): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 153
+Warning (10492): VHDL Process Statement warning at alu.vhd(154): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at alu.vhd(154): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at alu.vhd(154): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at alu.vhd(154): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 154
+Warning (10492): VHDL Process Statement warning at alu.vhd(156): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at alu.vhd(156): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at alu.vhd(156): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at alu.vhd(156): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at alu.vhd(157): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at alu.vhd(157): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at alu.vhd(157): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at alu.vhd(157): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at alu.vhd(158): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at alu.vhd(158): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at alu.vhd(158): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at alu.vhd(158): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at alu.vhd(160): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at alu.vhd(160): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at alu.vhd(160): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at alu.vhd(160): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 160
+Warning (10492): VHDL Process Statement warning at alu.vhd(161): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at alu.vhd(161): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at alu.vhd(161): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at alu.vhd(161): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at alu.vhd(162): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at alu.vhd(162): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at alu.vhd(162): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at alu.vhd(162): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at alu.vhd(166): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at alu.vhd(166): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at alu.vhd(166): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at alu.vhd(166): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at alu.vhd(166): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at alu.vhd(166): signal "OPERAND_31_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 166
+Warning (10492): VHDL Process Statement warning at alu.vhd(167): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at alu.vhd(167): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at alu.vhd(167): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at alu.vhd(167): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at alu.vhd(167): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at alu.vhd(167): signal "OPERAND_32_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 167
+Warning (10492): VHDL Process Statement warning at alu.vhd(168): signal "OPERAND_11_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at alu.vhd(168): signal "OPERAND_13_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at alu.vhd(168): signal "OPERAND_12_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at alu.vhd(168): signal "OPERAND_23_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at alu.vhd(168): signal "OPERAND_13_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at alu.vhd(168): signal "OPERAND_33_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 168
+Warning (10492): VHDL Process Statement warning at alu.vhd(169): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at alu.vhd(169): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at alu.vhd(169): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at alu.vhd(169): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at alu.vhd(169): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at alu.vhd(169): signal "OPERAND_31_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at alu.vhd(170): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at alu.vhd(170): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at alu.vhd(170): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at alu.vhd(170): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at alu.vhd(170): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at alu.vhd(170): signal "OPERAND_32_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at alu.vhd(171): signal "OPERAND_21_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at alu.vhd(171): signal "OPERAND_13_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at alu.vhd(171): signal "OPERAND_22_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at alu.vhd(171): signal "OPERAND_23_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at alu.vhd(171): signal "OPERAND_23_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at alu.vhd(171): signal "OPERAND_33_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 171
+Warning (10492): VHDL Process Statement warning at alu.vhd(172): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at alu.vhd(172): signal "OPERAND_11_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at alu.vhd(172): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at alu.vhd(172): signal "OPERAND_21_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at alu.vhd(172): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at alu.vhd(172): signal "OPERAND_31_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 172
+Warning (10492): VHDL Process Statement warning at alu.vhd(173): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at alu.vhd(173): signal "OPERAND_12_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at alu.vhd(173): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at alu.vhd(173): signal "OPERAND_22_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at alu.vhd(173): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at alu.vhd(173): signal "OPERAND_32_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 173
+Warning (10492): VHDL Process Statement warning at alu.vhd(174): signal "OPERAND_31_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at alu.vhd(174): signal "OPERAND_13_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at alu.vhd(174): signal "OPERAND_32_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at alu.vhd(174): signal "OPERAND_23_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at alu.vhd(174): signal "OPERAND_33_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at alu.vhd(174): signal "OPERAND_33_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/alu.vhd Line: 174
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 20 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[0]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[1]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[2]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[3]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[4]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[5]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[6]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[7]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[8]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[9]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[10]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[11]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[12]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[13]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[14]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[15]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[16]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "INSTRUCTION_IN[17]" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 8
+    Warning (15610): No output dependent on input pin "ENABLE" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 7
+    Warning (15610): No output dependent on input pin "CPU_CLK" File: C:/Users/Evandita/Documents/GitHub/Proyek-Akhir-PSD-Kelompok-BP06/matrixprocessor.vhd Line: 6
+Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 282 warnings
+    Info: Peak virtual memory: 4865 megabytes
+    Info: Processing ended: Sat Dec 23 22:37:39 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:12
 
 

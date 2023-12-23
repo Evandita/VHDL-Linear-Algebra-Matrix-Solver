@@ -1,5 +1,5 @@
 Flow report for ALU
-Sun Dec 17 13:57:18 2023
+Sat Dec 23 22:21:31 2023
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Sun Dec 17 13:57:18 2023       ;
+; Flow Status                 ; Successful - Sat Dec 23 22:21:31 2023       ;
 ; Quartus Prime Version       ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name               ; ALU                                         ;
 ; Top-level Entity Name       ; ALU                                         ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/17/2023 13:56:58 ;
+; Start date & time ; 12/23/2023 22:21:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ALU                 ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 9210269753586.170279621705644          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 96830612373084.170334488328888         ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -87,8 +87,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:21     ; 1.0                     ; 4850 MB             ; 00:00:32                           ;
-; Total                  ; 00:00:21     ; --                      ; --                  ; 00:00:32                           ;
+; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4851 MB             ; 00:00:11                           ;
+; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:11                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -97,7 +97,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------------------+------------+------------+----------------+
 ; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; ASUSA45VDVX298D  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Elaboration ; LAPTOP-M1PDKNSR  ; Windows 10 ; 10.0       ; x86_64         ;
 +------------------------+------------------+------------+------------+----------------+
 
 
