@@ -19,8 +19,8 @@ ARCHITECTURE bench OF testBench IS
     SIGNAL instruction_in          : STD_LOGIC_VECTOR(17 DOWNTO 0) := (OTHERS => '0');
 
     CONSTANT period  : TIME    := 600 ps;
-    CONSTANT t       : TIME    := 100 ps; -- Periode dari setiap clock cycle
-    CONSTANT max_clk : INTEGER := 48;     -- Maksimum clock cycle
+    CONSTANT t       : TIME    := 200 ps; -- Periode dari setiap clock cycle
+    CONSTANT max_clk : INTEGER := 30;     -- Maksimum clock cycle
 
 BEGIN
     processor : matrixProcessor PORT MAP(cpu_clk => cpu_clk, enable => enable, instruction_in => instruction_in);
@@ -41,30 +41,29 @@ BEGIN
 
     testBench : PROCESS
     BEGIN
-        enable <= '1';
+        enable = '1';
         INSTRUCTION_IN <= "000000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "001000110000000001";
+        INSTRUCTION_IN <= "001000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "010001000000000000";
+        INSTRUCTION_IN <= "010000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "011001010000000000";
+        INSTRUCTION_IN <= "011000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "100001100000000000";
+        INSTRUCTION_IN <= "100000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "101001110000000000";
+        INSTRUCTION_IN <= "101000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "110010000000000000";
+        INSTRUCTION_IN <= "110000100000000001";
         WAIT FOR period;
 
-        INSTRUCTION_IN <= "111010010000000001";
-        WAIT;
+        INSTRUCTION_IN <= "111000100000000001";
     END PROCESS;
 
 END ARCHITECTURE bench;
