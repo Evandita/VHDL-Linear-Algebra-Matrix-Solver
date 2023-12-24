@@ -241,6 +241,3 @@ Program ini digunakan untuk memverifikasi fungsionalitas dari MatrixProcessor. D
         INSTRUCTION_IN <= "111010010000000001";
         WAIT;
 ```
-
-## Simulasi
-
