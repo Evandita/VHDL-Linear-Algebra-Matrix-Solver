@@ -2,19 +2,23 @@
 Linear Algebra Matrix Solver merupakan simple computer yang dirancang khusus untuk menyelesaikan berbagai permasalahan matriks pada aljabar linear. Rangkaian matriks prosesor ini memiliki ISA yang dapat memberikan solusi atas permasalahan matriks berordo 3x3. ISA tersebut terdiri dari penjumlahan matriks A dan B, pengurangan matriks A dan B, perkalian matriks A dan B, pencerminan matriks A terhadap sumbu x, pencerminan matriks A terhadap sumbu y, pencerminan matriks A terhadap sumbu z, transpose matriks A, dan kofaktor matriks A. Selain itu, terdapat tambahan determinan matriks yang ditempatkan pada bagian dataflow. 
 
 ## Rangkaian 
-![Rangkaian_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/2a5509a2-932d-43e8-be02-1adc7b1dca32)
+![Rangkaian_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/8eea290c-3778-47a8-99fb-530f40d9b9ae)
+Rangkaian Linear Algebra Matrix Solver memiliki empat komponen utama, yakni Matrix Processor, Decoder, ALU, dan RAM. Alur kerjanya dimulai dari **Matrix Processor** yang bertugas mengatur alur eksekusi program dan menerima instruksi. Instruksi yang diterima akan dipecah menjadi beberapa bagian oleh **Decoder**. Instruksi yang sudah dipecah akan dieksekusi oleh **ALU**, sehingga didapatkan solusi dari permasalahan matriks Aljabar Linear. Pada akhirnya, solusi tersebut akan disimpan ke dalam **RAM**. 
 
 ## State Diagram
-![StateDiagram_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/4a43d345-3b12-4f00-96f3-4228b294c8c3)
+![StateDiagram_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/5074f818-d5e7-4fec-8202-a8047bbbac85)
+Dalam program Linear Algebra Matrix Solver terdapat penerapan microprogramming yang berisi state-state yang terlampir pada gambar di atas. **IDLE** merupakan kondisi awal program yang tidak melakukan apapun. Program akan lanjut ke state **FETCH** untuk mengambil instruksi yang akan dilakukan. Setelah mendapatkan instruksi, instruksi akan di-decode pada state **DECODE** menjadi beberapa bagian. Selanjutnya, akan dilakukan pembacaan memori pada state **READ_MEM** untuk mengisi operand. Setelah operand terisi, program akan dieksekusi pada state **EXECUTE** dan hasilnya akan ditulis ke dalam memori. Setelah proses ekseskusi berakhir, program akan menuju ke state **COMPLETE** yang bertugas memunculkan report statement dan akan kembali ke state awal.
 
 ## Control Word
-![CW_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/d3642112-bddb-47b1-892d-2e807373efeb)
+![CW_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/8d3f8697-e82f-4937-8516-af3fd80ca2e9)
+Program Linear Algebra Matrix Solver memiliki control word berukuran 18 bit yang terdiri dari FS berukuran 3 bit, DA berukuran 5 bit, AA berukuran 5 bit, dan BA berukuran 5 bit. FS berfungi untuk menyimpan operand yang akan mengeksekusi operasi matriks Aljabar Linear sesuai instruksi yang dimasukkan. Sementara itu, DA, AA, dan BA bertugas untuk menyimpan alamat register yang akan digunakan untuk menyimpan data operand. 
 
 ## Control Word Encoding
-![Table_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/b1632fe8-2791-4494-b18b-d310433b5550)
+![Table_PSD_PA](https://github.com/Evandita/Proyek-Akhir-PSD-Kelompok-BP06/assets/144194402/833d21e4-51e2-472e-b19c-3e293b43ca3f)
+Tabel di atas merupakan rincian dari bit code yang terdata dalam program Linear Algebra Matrix Solver. FS memiliki 8 kode yang bisa dijalankan, sedangan DA, AA, dan BA memiliki 32 kode yang bisa digunakan sebagai register. 
 
 ## Snippet Code 
-MatrixProcessor:
+### MatrixProcessor
 ```vhdl
         -- FSM logic
         CASE current_state IS
@@ -62,7 +66,16 @@ MatrixProcessor:
         END CASE;
 ```
 
-ALU:
+### Decoder
+```vhdl
+        INSTRUCTION <= INSTRUCTION_IN;
+        OPCODE <= INSTRUCTION(17 DOWNTO 15); -- Function select
+        OP1_ADDR <= INSTRUCTION(14 DOWNTO 10); -- Register DA
+        OP2_ADDR <= INSTRUCTION(9 DOWNTO 5); -- Register AA
+        OP3_ADDR <= INSTRUCTION(4 DOWNTO 0); -- Register BA
+```
+
+### ALU
 ```vhdl
         CASE OPCODE IS
                 -- Penjumlahan matriks
@@ -160,16 +173,7 @@ ALU:
         END CASE;
 ```
 
-Decoder:
-```vhdl
-        INSTRUCTION <= INSTRUCTION_IN;
-        OPCODE <= INSTRUCTION(17 DOWNTO 15); -- Function select
-        OP1_ADDR <= INSTRUCTION(14 DOWNTO 10); -- Register DA
-        OP2_ADDR <= INSTRUCTION(9 DOWNTO 5); -- Register AA
-        OP3_ADDR <= INSTRUCTION(4 DOWNTO 0); -- Register BA
-```
-
-RAM:
+### RAM
 ```vhdl
         if RAM_WR = '1' then
             registers_11(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_11;
@@ -205,7 +209,7 @@ RAM:
         end if;
 ```
 
-TestBench:
+### TestBench
 ```vhdl
         enable <= '1';
         INSTRUCTION_IN <= "000000100000000001";
