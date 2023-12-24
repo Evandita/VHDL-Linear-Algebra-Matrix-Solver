@@ -19,6 +19,7 @@ Tabel di atas merupakan rincian dari bit code yang terdata dalam program Linear 
 
 ## Snippet Code 
 ### MatrixProcessor
+Entitas utama yang mengoordinasikan semua komponen. MatrixProcessor mendefinisikan dan menghubungkan semua komponen lain (ALU, DECODER, dan RAM). MatrixProcessor juga mengontrol alur eksekusi program menggunakan Finite State Machine (FSM) dengan state IDLE, FETCH, DECODE, READ_MEM, EXECUTE, dan COMPLETE.
 ```vhdl
         -- FSM logic
         CASE current_state IS
@@ -67,6 +68,7 @@ Tabel di atas merupakan rincian dari bit code yang terdata dalam program Linear 
 ```
 
 ### Decoder
+Komponen ini menerima ISA dan program counter sebagai input. Decoder menghasilkan opcode dan alamat untuk tiga operand. Opcode menentukan operasi yang akan dilakukan pada matriks, dan alamat menunjukkan lokasi operand di memori.
 ```vhdl
         INSTRUCTION <= INSTRUCTION_IN;
         OPCODE <= INSTRUCTION(17 DOWNTO 15); -- Function select
@@ -76,6 +78,7 @@ Tabel di atas merupakan rincian dari bit code yang terdata dalam program Linear 
 ```
 
 ### ALU
+Komponen ini melakukan operasi aritmatika pada matriks. ALU menerima beberapa input termasuk program counter, opcode, dan dua set operand (A dan B). ALU menghasilkan determinan matriks dan hasil operasi-operasi matriks yang dipilih sesuai opcode.
 ```vhdl
         CASE OPCODE IS
                 -- Penjumlahan matriks
@@ -174,6 +177,7 @@ Tabel di atas merupakan rincian dari bit code yang terdata dalam program Linear 
 ```
 
 ### RAM
+Komponen ini berfungsi sebagai memori program. RAM menerima beberapa input termasuk program counter, dua alamat RAM, nilai input matriks 3x3, dan sinyal enable untuk write. RAM menghasilkan nilai output matriks 3x3 dari register RAM yang dipilih.
 ```vhdl
         if RAM_WR = '1' then
             registers_11(to_integer(unsigned(RAM_ADDR_A))) <= RAM_MATRIX_IN_11;
@@ -210,6 +214,7 @@ Tabel di atas merupakan rincian dari bit code yang terdata dalam program Linear 
 ```
 
 ### TestBench
+Program ini digunakan untuk memverifikasi fungsionalitas dari MatrixProcessor. Di sini terdapat clock dan memberikan serangkaian instruksi (ISA) kepada MatrixProcessor, mensimulasikan bagaimana sistem akan beroperasi. Hasilnya kemudian dapat diamati untuk memastikan bahwa sistem berfungsi seperti yang diharapkan.
 ```vhdl
         enable <= '1';
         INSTRUCTION_IN <= "000000100000000001";
